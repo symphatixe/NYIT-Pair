@@ -42,23 +42,23 @@ export default function Home() {
         <div className={styles.center}>
           <Image
             className={styles.logo}
-            src="/next.svg"
+            src="\nyitlogo_adobe_express.svg"
             alt="Next.js Logo"
             width={180}
-            height={37}
+            height={200}
             priority
           />
           <div className={styles.thirteen}>
             <Image
-              src="/thirteen.svg"
+              src="/bluepair.png"
               alt="13"
-              width={40}
-              height={31}
+              width={160}
+              height={160}
               priority
             />
           </div>
         </div>
-
+      
         <div className={styles.grid}>
           <a
             href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
