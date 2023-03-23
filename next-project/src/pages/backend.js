@@ -1,3 +1,9 @@
+const userField = document.querySelector("#username");
+const pwdField = document.querySelector("#password");
+const submitButton = document.querySelector("#submit");
+
+let activeUser;
+
 class user {
   hashtags = [];
   constructor(name, pwd, email, year, major, campus) {
@@ -33,7 +39,7 @@ class user {
     const date = new Date();
     date.setTime(date.getTime() + 3 * 60 * 1000);
     let expires = "expires = " + date.toUTCString();
-    document.cookie = `pwd = ${this.Pwd()}; email = ${this.Email()}; ${expires}; path = /`
+    document.cookie = `pwd = ${this.Pwd()}; email = ${this.Email()}; ${expires}; path = /`;
   }
 }
 
@@ -64,3 +70,13 @@ class course {
   get Weekday()               {return this.weekday;}
   set Weekday(newDay)         {this.weekday = newDay;}
 }
+
+function checkUser(user) {
+  if (userField.innerHTML != user.Email || pwdField.innerHTML != user.Pwd) {
+    alert("Incorrect email or password");
+  }
+
+  activeUser = user;
+}
+
+submitButton.addEventListener("click", checkUser);
