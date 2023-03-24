@@ -33,15 +33,28 @@ export default function login(){
         </div>
         
         <form action="">
+            <div className ={styles.inputs}>
             <label for="email">Enter your email: </label>
+            </div>
+            <div className ={styles.inputs}>
             <input type="email" name="username" id="username" required/>
-            <br /><br />
+            </div>
+            
+            
+            <div className={styles.inputs}>
             <label for="password">Enter your password: </label>
+            </div>
+            <div className={styles.inputs}>
             <input type="password" name="password" id="password" required/>
             <br /><br />
+            </div>
+            <div className ={styles.submit}>
+            <label for ="submit"> </label>
             <input type="submit" value="Submit" id="submit" style={{height:60,width:80,}}></input>
-            <br /> <br />
+            <br /><br />
+            </div>
             <Link href="/profile">New user? Create your profile here!</Link>
+            
         </form>
         
      </div>
