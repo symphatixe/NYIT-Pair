@@ -33,13 +33,15 @@ export default function login(){
         </div>
         
         <form action="">
-            <label htmlFor="username">Enter your username: </label>
+            <label for="email">Enter your email: </label>
             <input type="email" name="username" id="username" required/>
             <br /><br />
-            <label htmlFor="password">Enter your password: </label>
+            <label for="password">Enter your password: </label>
             <input type="password" name="password" id="password" required/>
             <br /><br />
             <input type="submit" value="Submit" id="submit" style={{height:60,width:80,}}></input>
+            <br /> <br />
+            <Link href="/profile">New user? Create your profile here!</Link>
         </form>
         
      </div>
