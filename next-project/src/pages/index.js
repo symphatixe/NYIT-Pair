@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@component/styles/Home.module.css'
+import Link from 'next/Link';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -17,10 +18,8 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.description}>
           <p>Welcome to NYIT Pair!</p>
-          <div>
               By Team 1!
           </div>
-        </div>
 
         <div className={styles.center}>
           <Image
@@ -43,33 +42,33 @@ export default function Home() {
         </div>
       
         <div className={styles.grid}>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          <Link
+            href="/login"
             className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
+            // target="_blank"
+            // rel="noopener noreferrer"
           >
             <h2 className={inter.className}>
-              Docs <span>-&gt;</span>
+              Login <span>-&gt;</span>
             </h2>
             <p className={inter.className}>
-              Find in-depth information about Next.js features and&nbsp;API.
+              Login here!
             </p>
-          </a>
+          </Link>
 
-          <a
-            href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          <Link
+            href="/profile"
             className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
+            // target="_blank"
+            // rel="noopener noreferrer"
           >
             <h2 className={inter.className}>
-              Learn <span>-&gt;</span>
+              Profile <span>-&gt;</span>
             </h2>
             <p className={inter.className}>
-              Learn about Next.js in an interactive course with&nbsp;quizzes!
+              Create or edit your profile here!
             </p>
-          </a>
+          </Link>
 
           <a
             href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
@@ -103,75 +102,4 @@ export default function Home() {
       </main>
     </>
   )
-}
-
-class user {
-
-  hashtags = [];
-
-  constructor(name, pwd, email, year, major, campus) {
-
-    this.name = name;
-    this.pwd = pwd;
-    this.email = email;
-    this.year = year;
-    this.major = major;
-    this.campus = campus;
-  }
-
-  get Name()            {return this.name;}
-  set Name(newName)     {this.name = newName;}
-  get Pwd()             {return this.pwd;}
-  set Pwd(newPwd)       {this.pwd = newPwd;}
-  get Email()           {return this.email;}
-  set Email(newEmail)   {this.email = newEmail;}
-  get Year()            {return this.year;}
-  set Year(newYear)     {this.year = newYear;}
-  get Major()           {return this.major;}
-  set Major(newMajor)   {this.major = newMajor;}
-  get Campus()          {return this.campus;}
-  set Campus(newCampus) {this.campus = newCampus;}
-
-  addHashtag(hashtag)  {this.hashtags.push(hashtag);}
-  removeHashtag(hashtag) {
-    if (this.hashtags.indexOf(hashtag) != -1) {
-      this.hashtags.splice(indexOf(hashtag), 1);
-    }
-  }
-
-  createCookie() {
-    const date = new Date();
-    date.setTime(date.getTime() + 3 * 60 * 1000);
-    let expires = "expires = " + date.toUTCString();
-    document.cookie = `pwd = ${this.Pwd()}; email = ${this.Email()}; ${expires}; path = /`
-  }
-}
-
-class course {
-  
-  constructor(courseCode, courseName, professor, section, location, startTime, endTime, weekday) {
-    this.courseCode = courseCode;
-    this.courseName = courseName;
-    this.professor = professor;
-    this.section = section;
-    this.location = location;
-    this.startTime = startTime;
-    this.endTime = endTime;
-    this.weekday = weekday;
-  }
-
-  get CourseCode()            {return this.courseCode;}
-  set CourseCode(newCode)     {this.courseCode = newCode;}
-  get Professor()             {return this.professor;}
-  set Professor(newProf)      {this.professor = newProf;}
-  get Section()               {return this.section;}
-  set Section(newSection)     {this.section = newSection;}
-  get Location()              {return this.location;}
-  set Location(newLocation)   {this.location = newLocation;}
-  get StartTime()             {return this.startTime;}
-  set StartTime(newStart)     {this.startTime = newStart;}
-  get EndTime()               {return this.endTime;}
-  set EndTime(newEnd)         {this.endTime = newEnd;}
-  get Weekday()               {return this.weekday;}
-  set Weekday(newDay)         {this.weekday = newDay;}
 }
