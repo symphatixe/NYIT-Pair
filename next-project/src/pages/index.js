@@ -77,7 +77,7 @@ export default function Home() {
             rel="noopener noreferrer"
           >
             <h2 className={inter.className}>
-              Enter Schedule <span>-&gt;</span>
+              Schedule <span>-&gt;</span>
             </h2>
             <p className={inter.className}>
               Enter your schedule here! 
