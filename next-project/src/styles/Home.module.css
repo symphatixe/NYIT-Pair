@@ -190,6 +190,22 @@
   padding-top: 50px;
 }
 
+.weeklySchedule{
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  padding-top: 50px;
+  font-size: 22px;
+}
+
+.classTimes{
+  font-family: 'Courier New', Courier, monospace;
+  text-align: center;
+  font-size: 15px;
+  padding-top: 25px;
+  
+  
+}
+
 /* Conic Gradient Animation */
 .thirteen::before {
   animation: 6s rotate linear infinite;

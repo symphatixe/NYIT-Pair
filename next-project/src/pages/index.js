@@ -71,10 +71,10 @@ export default function Home() {
           </Link>
 
           <a
-            href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+            href="/schedule"
             className={styles.card}
-            target="_blank"
-            rel="noopener noreferrer"
+           // target="_blank"
+           // rel="noopener noreferrer"
           >
             <h2 className={inter.className}>
               Schedule <span>-&gt;</span>
