@@ -12,11 +12,10 @@ export default function schedule(){
     <div className={styles.schedule}>
         
         <div className={styles.weeklySchedule}>
-        <label for="week">Monday - Tuesday - Wednesday - Thursday - Friday - Saturday - Sunday </label>
+        <label for="week">Monday -- Tuesday -- Wednesday -- Thursday -- Friday -- Saturday -- Sunday </label>
         </div>
         
-<div className={styles.classTimes}>
-        <label for="class">Class code: </label>
+        {/* <label for="class">Class code: </label>
         <input type="text" name="class" id="class" placeholder="ex. CSCI 318"/>
         &nbsp;
         <input type="text" name="class" id="class" placeholder="ex. CSCI 318"/>
@@ -63,18 +62,103 @@ export default function schedule(){
         <input type="text" name="end" id="end" placeHolder="Time End"/>
         &nbsp;
         <input type="text" name="end" id="end" placeHolder="Time End"/>
-        
+         */}
+
+      {/*Formatted this way so the addClass button can eventually duplicate the code for inputting class 
+      information and have them alligned properly. An example of how it woiuld look is on monday.
+      The old code i left above incase anyone wanted it back. ~ Eddie */}
+
+      <div className={styles.classTimes}>
+        <div>Class code:  <br />Start time:  <br />End time: <br /><br /><br /></div>
+      
+        <div id='mondayClasses'>
+            <input type="text" name="class" id="class" placeholder="ex. CSCI 318"/>
+          &nbsp;<br />
+          <input type="text" name="begin" id="begin" placeHolder="Time Start"/>
+          &nbsp;<br />
+          <input type="text" name="end" id="end" placeHolder="Time End"/>
+          &nbsp;<br /><br />
+
+          <input type="text" name="class" id="class" placeholder="ex. CSCI 318"/>
+          &nbsp;<br />
+          <input type="text" name="begin" id="begin" placeHolder="Time Start"/>
+          &nbsp;<br />
+          <input type="text" name="end" id="end" placeHolder="Time End"/>
+          &nbsp;<br /><br />
+          <button id='addClassMon'>Add class +</button><br />
+        </div>
+
+        <div id='tuesdayClasses'>
+            <input type="text" name="class" id="class" placeholder="ex. CSCI 318"/>
+          &nbsp;<br />
+          <input type="text" name="begin" id="begin" placeHolder="Time Start"/>
+          &nbsp;<br />
+          <input type="text" name="end" id="end" placeHolder="Time End"/>
+          &nbsp;<br /><br />
+          <button id='addClassTues'>Add class +</button>
+        </div>
+
+        <div id='wednesdayClasses'>
+          <input type="text" name="class" id="class" placeholder="ex. CSCI 318"/>
+          &nbsp;<br />
+          <input type="text" name="begin" id="begin" placeHolder="Time Start"/>
+          &nbsp;<br />
+          <input type="text" name="end" id="end" placeHolder="Time End"/>
+          &nbsp;<br /><br />
+          <button id='addClassWed'>Add class +</button>
+        </div>
+
+        <div id='thursdayClasses'>
+          <input type="text" name="class" id="class" placeholder="ex. CSCI 318"/>
+          &nbsp;<br />
+          <input type="text" name="begin" id="begin" placeHolder="Time Start"/>
+          &nbsp;<br />
+          <input type="text" name="end" id="end" placeHolder="Time End"/>
+          &nbsp;<br /><br />
+          <button id='addClassThurs'>Add class +</button>
+        </div>
+
+        <div id='fridayClasses'>
+          <input type="text" name="class" id="class" placeholder="ex. CSCI 318"/>
+          &nbsp;<br />
+          <input type="text" name="begin" id="begin" placeHolder="Time Start"/>
+          &nbsp;<br />
+          <input type="text" name="end" id="end" placeHolder="Time End"/>
+          &nbsp;<br /><br />
+          <button id='addClassFri'>Add class +</button>
+        </div>
+
+        <div id='saturdayClasses'>
+          <input type="text" name="class" id="class" placeholder="ex. CSCI 318"/>
+          &nbsp;<br />
+          <input type="text" name="begin" id="begin" placeHolder="Time Start"/>
+          &nbsp;<br />
+          <input type="text" name="end" id="end" placeHolder="Time End"/>
+          &nbsp;<br /><br />
+          <button id='addClassSat'>Add class +</button>
+        </div>
+
+        <div id='sundayClasses'>
+          <input type="text" name="class" id="class" placeholder="ex. CSCI 318"/>
+          &nbsp;<br />
+          <input type="text" name="begin" id="begin" placeHolder="Time Start"/>
+          &nbsp;<br />
+          <input type="text" name="end" id="end" placeHolder="Time End"/>
+          &nbsp;<br /><br />
+          <button id='addClassSun'>Add class +</button>
+        </div>
+
         
         </div>
         <br /><br />
         <div className = {styles.submit}>
-            <label for = "submit"> </label>
-            <input type = "submit" value="Submit" id = "submit" style={{height:40, width:60, color: 'black',}}></input>
-            <br /><br />
-            </div>
-
+          <label for = "submit"> </label>
+          <input type = "submit" value="Submit" id = "submit" style={{height:40, width:60, color: 'black',}}></input>
+          <br /><br />
+        </div>
     </div>
 
     </>
   )
+    
 }
