@@ -3,9 +3,30 @@ import styles from '@component/styles/Home.module.css'
 import Link from 'next/link';
 import Image from 'next/image'
 
+import { useState } from 'react';
+
+
 const inter = Inter({ subsets: ['latin'] })
 
 export default function login(){
+
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+
+    const handleChange = (e) => { 
+        const { name, value } = e.target;
+        if (name === 'email') setEmail(value);
+        if (name === 'password') setPassword(value);
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        const user = { email, password };
+
+        fetch('http://localhost:3000/api/login', {}
+    }
+
   return (
     <>
     <title>Login Page</title>
@@ -37,14 +58,14 @@ export default function login(){
             <label for = "email">Enter your email: </label>
             </div>
             <div className ={styles.inputs}>
-            <input type = "email" name = "username" id = "username" required/>
+            <input type = "email" name = "username" id = "username" required onChange={handleChange}/>
             </div>
             
             <div className = {styles.inputs}>
             <label for="password">Enter your password: </label>
             </div>
             <div className = {styles.inputs}>
-            <input type = "password" name = "password" id = "password" required/>
+            <input type = "password" name = "password" id = "password" required onChange={handleChange}/>
             <br /><br />
             </div>
             <div className = {styles.submit}>
