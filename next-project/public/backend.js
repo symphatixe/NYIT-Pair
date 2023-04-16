@@ -79,4 +79,6 @@ function checkUser(user) {
   activeUser = user;
 }
 
-submitButton.addEventListener("click", checkUser);
+function initialize() {
+  console.log("Hello");
+}

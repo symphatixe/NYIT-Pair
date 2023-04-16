@@ -1,7 +1,8 @@
 import { Inter } from 'next/font/google'
 import styles from '@component/styles/Home.module.css'
 import Link from 'next/link';
-import Image from 'next/image'
+import Image from 'next/image';
+import Script from 'next/script';
 
 import { useState } from 'react';
 
@@ -24,7 +25,7 @@ export default function login(){
 
         const user = { email, password };
 
-        fetch('http://localhost:3000/api/login', {}
+        fetch('http://localhost:3000/api/login', {});
     }
 
   return (
