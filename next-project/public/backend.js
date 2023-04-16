@@ -1,7 +1,3 @@
-const userField = document.querySelector("#username");
-const pwdField = document.querySelector("#password");
-const submitButton = document.querySelector("#submit");
-
 let activeUser;
 
 class user {
@@ -79,6 +75,6 @@ function checkUser(user) {
   activeUser = user;
 }
 
-function initialize() {
+export function initialize() {
   console.log("Hello");
 }

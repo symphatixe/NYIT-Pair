@@ -2,7 +2,6 @@ import { Inter } from 'next/font/google'
 import styles from '@component/styles/Home.module.css'
 import Link from 'next/link';
 import Image from 'next/image';
-import Script from 'next/script';
 
 import { useState } from 'react';
 
@@ -30,10 +29,11 @@ export default function login(){
 
   return (
     <>
+    <Script type = "text/javascript" src = "/backend.js"></Script>
     <title>Login Page</title>
      <div className={styles.back}><p ><Link href='/'> Back </Link></p></div>
      
-     <div className={styles.form}>
+     <div className={styles.form} onLoad={initialize()}>
         <div className={styles.center2}>
             <Image
                 className={styles.logo}
