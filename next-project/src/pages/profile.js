@@ -2,6 +2,7 @@ import { Inter } from 'next/font/google'
 import styles from '@component/styles/Home.module.css'
 import Link from 'next/link';
 import Image from 'next/image';
+import { initialize, user } from '../../public/backend';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -10,7 +11,7 @@ export default function profile(){
     <>
     <div className={styles.back}><Link href='/'>Back</Link> </div>
     
-    <main className={styles.profileMain}> 
+    <main className={styles.profileMain} onLoad={initialize()}> 
      <div className ={styles.profilePicture}><Image
           src="/silhouette.png"
           alt="13"

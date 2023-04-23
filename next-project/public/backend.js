@@ -1,6 +1,6 @@
 let activeUser;
 
-class user {
+export class user {
   hashtags = [];
   constructor(name, pwd, email, year, major, campus) {
     this.name = name;
@@ -39,7 +39,7 @@ class user {
   }
 }
 
-class course {
+export class course {
   constructor(courseCode, courseName, professor, section, location, startTime, endTime, weekday) {
     this.courseCode = courseCode;
     this.courseName = courseName;
@@ -67,7 +67,7 @@ class course {
   set Weekday(newDay)         {this.weekday = newDay;}
 }
 
-function checkUser(user) {
+export function checkUser(user) {
   if (userField.innerHTML != user.Email || pwdField.innerHTML != user.Pwd) {
     alert("Incorrect email or password");
   }
