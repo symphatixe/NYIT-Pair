@@ -11,7 +11,7 @@ export default function profile(){
     <>
     <div className={styles.back}><Link href='/'>Back</Link> </div>
     
-    <main className={styles.profileMain} onLoad={initialize()}> 
+    <main className={styles.profileMain} > 
      <div className ={styles.profilePicture}><Image
           src="/silhouette.png"
           alt="13"

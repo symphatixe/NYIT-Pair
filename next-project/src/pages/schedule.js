@@ -9,7 +9,7 @@ const inter = Inter({ subsets: ['latin'] })
 export default function schedule(){
     return (
     <>
-    <div className={styles.back} onLoad={initialize()}><Link href='/'>Back</Link> </div>
+    <div className={styles.back} ><Link href='/'>Back</Link> </div>
     <div className={styles.schedule}>
         
         <div className={styles.weeklySchedule}>
