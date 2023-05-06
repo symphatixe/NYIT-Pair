@@ -75,6 +75,10 @@ export function checkUser(user) {
   activeUser = user;
 }
 
-export function initialize() {
-  console.log("Hello");
+export function handleSubmit(e) {
+  e.preventDefault();
+  const formData = new FormData(e.target);
+
+  activeUser = new user("", formData.get("password"), formData.get("username"), "", "", "");
+  console.log(activeUser.Email);
 }
