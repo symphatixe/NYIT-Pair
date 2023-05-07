@@ -2,7 +2,7 @@ import { Inter } from 'next/font/google'
 import styles from '@component/styles/Home.module.css'
 import Link from 'next/link';
 import Image from 'next/image';
-import { initialize, user } from '../../public/backend';
+import { handleSubmit } from '../../public/backend';
 
 const inter = Inter({ subsets: ['latin'] })
 

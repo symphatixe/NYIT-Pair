@@ -67,18 +67,41 @@ export class course {
   set Weekday(newDay)         {this.weekday = newDay;}
 }
 
-export function checkUser(user) {
-  if (userField.innerHTML != user.Email || pwdField.innerHTML != user.Pwd) {
-    alert("Incorrect email or password");
-  }
-
-  activeUser = user;
-}
-
 export function handleSubmit(e) {
   e.preventDefault();
   const formData = new FormData(e.target);
 
   activeUser = new user("", formData.get("password"), formData.get("username"), "", "", "");
   console.log(activeUser.Email);
+}
+
+export function addClassInputs(day) {
+  const classInput = document.createElement("input");
+  const startInput = document.createElement("input");
+  const endInput = document.createElement("input");
+
+  classInput.setAttribute("type", "text");
+  classInput.setAttribute("name", "class");
+  classInput.setAttribute("id", "class");
+  classInput.setAttribute("placeholder", "ex. CSCI 318");
+
+  startInput.setAttribute("type", "text");
+  startInput.setAttribute("name", "begin");
+  startInput.setAttribute("id", "begin");
+  startInput.setAttribute("placeholder", "Time Start");
+
+  endInput.setAttribute("type", "text");
+  endInput.setAttribute("name", "end");
+  endInput.setAttribute("id", "end");
+  endInput.setAttribute("placeholder", "Time End");
+
+  const divElements = document.getElementById(day + "dayClasses").childNodes;
+  const addButton = divElements[divElements.length - 2];
+
+  document.getElementById(day + "dayClasses").insertBefore(classInput, addButton);
+  addButton.insertAdjacentHTML("beforebegin", "&nbsp; <br />");
+  document.getElementById(day + "dayClasses").insertBefore(startInput, addButton);
+  addButton.insertAdjacentHTML("beforebegin", "&nbsp; <br />");
+  document.getElementById(day + "dayClasses").insertBefore(endInput, addButton);
+  addButton.insertAdjacentHTML("beforebegin", "&nbsp; <br /><br />");
 }
