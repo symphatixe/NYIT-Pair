@@ -1,28 +1,36 @@
-import mysql from "mysql2/promise";
+const mysql = require('mysql2/promise');
 
-export default async function handler(req, res) {
+export default async function loginHandler(req, res) {
 
     const databaseConnection = await mysql.createConnection({
 
-        host: "127.0.0.1",
+        host: "localhost",
         database: "default",
         port: 3306,
         user: "root",
         password: "Nerftactics0!"
     });
 
+    const {email, password} = req.body;
+
     try {
 
-        const query = "SELECT email, password FROM users WHERE (email, password) = ( 'vkan@nyit.edu' , 'hello123')";
-        const returnValue = [];
+        const [result] = await databaseConnection.query('SELECT * FROM users WHERE email = ? AND password = ?', [email, password]);
+        console.log(result)
 
-        const [results] = await databaseConnection.execute(query, returnValue);
-        databaseConnection.end();
+        if (result.length > 0) {
 
-        res.status(200).json({ result: results });
+            console.log(result[0]);
+            res.status(200).json({ message: 'Login successful' });
+        } 
+
+        else {
+            // Invalid credentials
+            res.status(401).json({ message: 'Invalid credentials' });
+        }
     }
 
     catch (error) {
-        res.status(500).json({ message: error.message });
+        console.log('some error', error)
     }
 }

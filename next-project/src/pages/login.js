@@ -2,7 +2,6 @@ import { Inter } from 'next/font/google'
 import styles from '@component/styles/Home.module.css'
 import Link from 'next/link';
 import Image from 'next/image';
-import { handleSubmit } from '../../public/backend';
 
 import { useState } from 'react';
 
@@ -11,22 +10,35 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function login(){
 
-    // const [email, setEmail] = useState('');
-    // const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
-    // const handleChange = (e) => { 
-    //     const { name, value } = e.target;
-    //     if (name === 'email') setEmail(value);
-    //     if (name === 'password') setPassword(value);
-    // }
+    const handleChange = (e) => { 
+        const { name, value } = e.target;
+        if (name === 'email') setEmail(value);
+        if (name === 'password') setPassword(value);
+    }
 
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
+    const handleSubmit = async (e) => {
+        e.preventDefault();
 
-        
+        console.log('hello there is something here', email, password);
 
-    //     fetch('http://localhost:3000/api/login', {});
-    // }
+        const response = await fetch('http://localhost:3000/api/users/loginData', {method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({email, password}) 
+        });
+            
+        if (response.ok) {
+            console.log('login successful')
+            //insert some redirect here to a different page without the login button
+        }
+        else {
+            console.log('login failed')
+            //put some code here to reflect on the frontend so that the user can see their details
+            //were wrong
+        }
+    }
 
   return (
     <>
@@ -54,23 +66,23 @@ export default function login(){
             </div>
         </div>
         
-        <form action="" onSubmit={handleSubmit}>
+        <form onSubmit ={handleSubmit}>
             <div className = {styles.inputs}>
-            <label for = "email">Enter your email: </label>
+            <label htmlFor = "email">Enter your email: </label>
             </div>
             <div className ={styles.inputs}>
-            <input type = "email" name = "username" id = "username" />
+            <input type = "email" name = "email" id = "email" onChange={handleChange}/>
             </div>
             
             <div className = {styles.inputs}>
-            <label for="password">Enter your password: </label>
+            <label htmlFor="password">Enter your password: </label>
             </div>
             <div className = {styles.inputs}>
-            <input type = "password" name = "password" id = "password" />
+            <input type = "password" name = "password" id = "password" onChange={handleChange}/>
             <br /><br />
             </div>
             <div className = {styles.submit}>
-            <label for = "submit"> </label>
+            <label htmlFor = "submit"> </label>
             <input type = "submit" value="Submit" id = "submit" style={{height:60, width:80, color: 'black',}}></input>
             <br /><br />
             </div>
