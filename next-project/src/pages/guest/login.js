@@ -64,14 +64,14 @@ export default function Login(){
             <label htmlFor = "email">Enter your email: </label>
             </div>
             <div className = {styles.inputs}>
-            <input type = "email" name = "email" id = "email" />
+            <input type = "email" name = "email" id = "email" required/>
             </div>
             
             <div className = {styles.inputs}>
             <label htmlFor="password">Enter your password: </label>
             </div>
             <div className = {styles.inputs}>
-            <input type = "password" name = "password" id = "password" />
+            <input type = "password" name = "password" id = "password" required/>
             <br /><br />
             </div>
 

@@ -22,13 +22,13 @@ export default function CreateUserProfile(){
               <br /><br />
               <input type = "text" name = "email" id = "email" required/>
               <br /><br />
-              <label htmlFor = "major">Enter your password: </label>
+              <label htmlFor = "password1">Enter your password: </label>
               <br /><br />
-              <input type = "password" name = "password" id = "password" required/>
+              <input type = "password" name = "password1" id = "password1" required/>
               <br /><br />
-              <label htmlFor = "major">Enter your password again. </label>
+              <label htmlFor = "password2">Enter your password again. </label>
               <br /><br />
-              <input type = "password" name = "password" id = "password" required/>
+              <input type = "password" name = "password2" id = "password2" required/>
               <br /><br />
 
               <div className = {styles.submit}>
