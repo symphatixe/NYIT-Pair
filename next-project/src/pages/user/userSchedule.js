@@ -73,81 +73,74 @@ export default function schedule(){
         <div>Class code:  <br />Start time:  <br />End time: <br /><br /><br /></div>
       
         <div id='mondayClasses'>
-            <input type="text" name="class" id="class" placeholder="ex. CSCI 318"/>
+          <div id = "class"></div>
           &nbsp;<br />
-          <input type="text" name="begin" id="begin" placeholder="Time Start"/>
+          <div id = "begin"></div>
           &nbsp;<br />
-          <input type="text" name="end" id="end" placeholder="Time End"/>
+          <div id = "end"></div>
           &nbsp;<br /><br />
-          <button id='addClassMon' onClick={() => addClassInputs("mon")}>Add class +</button><br />
         </div>
 
         <div id='tuesdayClasses'>
-            <input type="text" name="class" id="class" placeholder="ex. CSCI 318"/>
+          <div id = "class"></div>
           &nbsp;<br />
-          <input type="text" name="begin" id="begin" placeholder="Time Start"/>
+          <div id = "begin"></div>
           &nbsp;<br />
-          <input type="text" name="end" id="end" placeholder="Time End"/>
+          <div id = "end"></div>
           &nbsp;<br /><br />
-          <button id='addClassTues' onClick={() => addClassInputs("tues")}>Add class +</button><br />
         </div>
 
         <div id='wednesdayClasses'>
-          <input type="text" name="class" id="class" placeholder="ex. CSCI 318"/>
+          <div id = "class"></div>
           &nbsp;<br />
-          <input type="text" name="begin" id="begin" placeholder="Time Start"/>
+          <div id = "begin"></div>
           &nbsp;<br />
-          <input type="text" name="end" id="end" placeholder="Time End"/>
+          <div id = "end"></div>
           &nbsp;<br /><br />
-          <button id='addClassWed' onClick={() => addClassInputs("wednes")}>Add class +</button><br />
         </div>
 
         <div id='thursdayClasses'>
-          <input type="text" name="class" id="class" placeholder="ex. CSCI 318"/>
+          <div id = "class"></div>
           &nbsp;<br />
-          <input type="text" name="begin" id="begin" placeholder="Time Start"/>
+          <div id = "begin"></div>
           &nbsp;<br />
-          <input type="text" name="end" id="end" placeholder="Time End"/>
+          <div id = "end"></div>
           &nbsp;<br /><br />
-          <button id='addClassThurs' onClick={() => addClassInputs("thurs")}>Add class +</button><br />
         </div>
 
         <div id='fridayClasses'>
-          <input type="text" name="class" id="class" placeholder="ex. CSCI 318"/>
+          <div id = "class"></div>
           &nbsp;<br />
-          <input type="text" name="begin" id="begin" placeholder="Time Start"/>
+          <div id = "begin"></div>
           &nbsp;<br />
-          <input type="text" name="end" id="end" placeholder="Time End"/>
+          <div id = "end"></div>
           &nbsp;<br /><br />
-          <button id='addClassFri' onClick={() => addClassInputs("fri")}>Add class +</button><br />
         </div>
 
         <div id='saturdayClasses'>
-          <input type="text" name="class" id="class" placeholder="ex. CSCI 318"/>
+          <div id = "class"></div>
           &nbsp;<br />
-          <input type="text" name="begin" id="begin" placeholder="Time Start"/>
+          <div id = "begin"></div>
           &nbsp;<br />
-          <input type="text" name="end" id="end" placeholder="Time End"/>
+          <div id = "end"></div>
           &nbsp;<br /><br />
-          <button id='addClassSat' onClick={() => addClassInputs("satur")}>Add class +</button><br />
         </div>
 
         <div id='sundayClasses'>
-          <input type="text" name="class" id="class" placeholder="ex. CSCI 318"/>
+          <div id = "class"></div>
           &nbsp;<br />
-          <input type="text" name="begin" id="begin" placeholder="Time Start"/>
+          <div id = "begin"></div>
           &nbsp;<br />
-          <input type="text" name="end" id="end" placeholder="Time End"/>
+          <div id = "end"></div>
           &nbsp;<br /><br />
-          <button id='addClassSun' onClick={() => addClassInputs("sun")}>Add class +</button><br />
         </div>
 
         
         </div>
         <br /><br />
         <div className = {styles.submit}>
-          <label htmlFor = "submit"> </label>
-          <input type = "submit" value="Submit" id = "submit" style={{height:40, width:60, color: 'black',}} onClick={collectClasses}></input>
+          <label htmlFor = "edit"> </label>
+          <input type="button" value="Edit" id="edit" style={{height:40, width:60, color: 'black',}}></input>
           <br /><br />
         </div>
     </div>
