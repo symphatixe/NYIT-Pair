@@ -1,9 +1,9 @@
 import styles from '@component/styles/Home.module.css'
 import Link from 'next/link';
-import { changePageTitle } from '../../../public/backend';
+import { ChangePageTitle } from '../../../public/backend';
 
 export default function CreateUserProfile(){
-  changePageTitle('Create User');
+  ChangePageTitle('Create User');
   
   const handleSubmit = (e) => {
     e.preventDefault();

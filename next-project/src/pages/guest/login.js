@@ -2,11 +2,16 @@ import styles from '@component/styles/Home.module.css'
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { changePageTitle } from '../../../public/backend';
+import { ChangePageTitle } from '../../../public/backend.js';
+import { ActiveUserContext } from '../../../public/ActiveUserContext';
+import { useContext } from 'react';
+import { User } from '../../../public/backend'
 
-export default function login(){
+export default function Login(){
+    ChangePageTitle('Login Page');
     const router = useRouter();
-    changePageTitle('Login Page');
+    const {loggedUser, setLoggedUser} = useContext(ActiveUserContext);
+    
 
     const handleLogin = () => {
         router.push('/user/main');
@@ -25,6 +30,8 @@ export default function login(){
                                     body: JSON.stringify({email, password}) 
                                     });
         if (response.ok) {
+            const user = await response.json();
+            setLoggedUser(user);
             handleLogin();
         }
 
@@ -35,8 +42,9 @@ export default function login(){
 
   return (
     <>
+    <ActiveUserContext.Provider value = {{ loggedUser, setLoggedUser }}>
     <title>Login Page</title>
-     <div className = {styles.back}><p ><Link href = '../index'> Back </Link></p></div>
+     <div className = {styles.back}><p ><Link href = '/'> Back </Link></p></div>
      
      <div className = {styles.form}>
         <div className = {styles.center2}>
@@ -50,7 +58,6 @@ export default function login(){
                 />
             </div>
         </div>
-        
         <form onSubmit = {handleSubmit}>
 
             <div className = {styles.inputs}>
@@ -77,7 +84,9 @@ export default function login(){
             <Link href = "/guest/createUser">New user? Create your profile here!</Link>
         </form>
      </div>
+     </ActiveUserContext.Provider>
     </>
+
    )
 }
 

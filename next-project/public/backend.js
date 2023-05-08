@@ -1,13 +1,11 @@
 import { useEffect } from "react";
 
-let activeUser;
-
-export function changePageTitle(title) {
+export function ChangePageTitle(title) {
 
   useEffect(() => { document.title = title;}, [title]);
 }
 
-export class user {
+export class User {
 
   hashtags = [];
   constructor(userID, name, pwd, email, studentID, year, major, campus, bio) {
@@ -20,6 +18,7 @@ export class user {
     this.major = major;
     this.campus = campus;
     this.bio = bio;
+    this.activeUser = null;
   }
 
   get UserID()          {return this.userID;}
@@ -31,7 +30,7 @@ export class user {
   get Email()           {return this.email;}
   set Email(newEmail)   {this.email = newEmail;}
   get StudentID()       {return this.studentID;}
-  set StudentID(newID)  {studentID = newID;}
+  set StudentID(newID)  {this.studentID = newID;}
   get Year()            {return this.year;}
   set Year(newYear)     {this.year = newYear;}
   get Major()           {return this.major;}
@@ -40,12 +39,14 @@ export class user {
   set Campus(newCampus) {this.campus = newCampus;}
   get Bio()             {return this.bio;}
   set Bio(newBio)       {this.bio = newBio;}
+  get ActiveUser()      {return this.activeUser;}
+  set ActiveUser(newUser) {this.activeUser = newUser;}
 
   //assume that hashtag in this case is a class object
   addHashtag(hashtag)   {this.hashtags.push(hashtag);}
   removeHashtag(hashtag) {
     if (this.hashtags.indexOf(hashtag) != -1) {
-      this.hashtags.splice(indexOf(hashtag), 1);
+      this.hashtags.splice(this.hashtags.indexOf(hashtag), 1);
     }
   }
 
@@ -57,7 +58,7 @@ export class user {
   }
 }
 
-export class hashtag {
+export class Hashtag {
 
   constructor(text, userID) {
     this.text = text;
@@ -70,11 +71,11 @@ export class hashtag {
   set UserID(newID)     {userID = newID;}
 }
 
-export class course {
+export class Course {
 
-  constructor(courseCode, courseName, professor, section, location, startTime, endTime, weekday) {
-    this.courseCode = courseCode;
-    this.courseName = courseName;
+  constructor(CourseCode, CourseName, professor, section, location, startTime, endTime, weekday) {
+    this.CourseCode = CourseCode;
+    this.CourseName = CourseName;
     this.professor = professor;
     this.section = section;
     this.location = location;
@@ -83,10 +84,10 @@ export class course {
     this.weekday = weekday;
   }
 
-  get CourseCode()            {return this.courseCode;}
-  set CourseCode(newCode)     {this.courseCode = newCode;}
-  get CourseName()            {return this.courseName;}
-  set CourseName(newName)     {this.courseName = newName;}
+  get CourseCode()            {return this.CourseCode;}
+  set CourseCode(newCode)     {this.CourseCode = newCode;}
+  get CourseName()            {return this.CourseName;}
+  set CourseName(newName)     {this.CourseName = newName;}
   get Professor()             {return this.professor;}
   set Professor(newProf)      {this.professor = newProf;}
   get Section()               {return this.section;}
@@ -150,37 +151,37 @@ export function collectClasses() {
   const sunClassList = []; 
 
   for (let i = 0; i < monInputList.length; i++) {
-    monClassList.push(new course(monInputList[i].value, "", "", "", "", monInputList[i + 1].value, monInputList[i + 2].value, "Monday"));
+    monClassList.push(new Course(monInputList[i].value, "", "", "", "", monInputList[i + 1].value, monInputList[i + 2].value, "Monday"));
     i += 3;
   }
 
   for (let i = 0; i < tuesInputList.length; i++) {
-    tuesClassList.push(new course(tuesInputList[i].value, "", "", "", "", tuesInputList[i + 1].value, tuesInputList[i + 2].value, "Tuesday"));
+    tuesClassList.push(new Course(tuesInputList[i].value, "", "", "", "", tuesInputList[i + 1].value, tuesInputList[i + 2].value, "Tuesday"));
     i += 3;
   }
 
   for (let i = 0; i < wedInputList.length; i++) {
-    wedClassList.push(new course(wedInputList[i].value, "", "", "", "", wedInputList[i + 1].value, wedInputList[i + 2].value, "Wednesday"));
+    wedClassList.push(new Course(wedInputList[i].value, "", "", "", "", wedInputList[i + 1].value, wedInputList[i + 2].value, "Wednesday"));
     i += 3;
   }
 
   for (let i = 0; i < thursInputList.length; i++) {
-    thursClassList.push(new course(thursInputList[i].value, "", "", "", "", thursInputList[i + 1].value, thursInputList[i + 2].value, "Thursday"));
+    thursClassList.push(new Course(thursInputList[i].value, "", "", "", "", thursInputList[i + 1].value, thursInputList[i + 2].value, "Thursday"));
     i += 3;
   }
 
   for (let i = 0; i < friInputList.length; i++) {
-    friClassList.push(new course(tuesInputList[i].value, "", "", "", "", tuesInputList[i + 1].value, tuesInputList[i + 2].value, "Friday"));
+    friClassList.push(new Course(tuesInputList[i].value, "", "", "", "", tuesInputList[i + 1].value, tuesInputList[i + 2].value, "Friday"));
     i += 3;
   }
 
   for (let i = 0; i < satInputList.length; i++) {
-    satClassList.push(new course(satInputList[i].value, "", "", "", "", satInputList[i + 1].value, satInputList[i + 2].value, "Saturday"));
+    satClassList.push(new Course(satInputList[i].value, "", "", "", "", satInputList[i + 1].value, satInputList[i + 2].value, "Saturday"));
     i += 3;
   }
 
   for (let i = 0; i < sunInputList.length; i++) {
-    sunClassList.push(new course(sunInputList[i].value, "", "", "", "", sunInputList[i + 1].value, sunInputList[i + 2].value, "Sunday"));
+    sunClassList.push(new Course(sunInputList[i].value, "", "", "", "", sunInputList[i + 1].value, sunInputList[i + 2].value, "Sunday"));
     i += 3;
   }
 }

@@ -2,13 +2,12 @@ import { Inter } from 'next/font/google'
 import styles from '@component/styles/Home.module.css'
 import Link from 'next/link';
 import { collectClasses, addClassInputs } from '../../../public/backend';
-import { changePageTitle } from '../../../public/backend';
-import { useState } from 'react';
+import { ChangePageTitle } from '../../../public/backend';
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function CreateSchedule() {
-  changePageTitle('Create Schedule');
+  ChangePageTitle('Create Schedule');
 
     return (
     <>

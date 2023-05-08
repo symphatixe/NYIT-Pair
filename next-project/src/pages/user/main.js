@@ -3,10 +3,14 @@ import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import styles from '@component/styles/Home.module.css'
 import Link from 'next/link';
+import { useContext, useState } from 'react';
+import { ActiveUserContext } from '../../../public/ActiveUserContext';
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function UserHome() {
+  const { loggedUser } = useContext(ActiveUserContext);
+
   return (
     <>
       <Head>
@@ -42,6 +46,9 @@ export default function UserHome() {
             />
           </div>
         </div>
+
+        <h2>Welcome to Pair, {loggedUser && loggedUser.name}</h2>
+
       
         <div className = {styles.grid}>
           <Link href = "/user/userProfile" className = {styles.card}>

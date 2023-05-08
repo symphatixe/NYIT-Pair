@@ -1,10 +1,10 @@
 import styles from '@component/styles/Home.module.css'
 import Link from 'next/link';
 import Image from 'next/image';
-import { changePageTitle } from '../../../public/backend';
+import { ChangePageTitle } from '../../../public/backend';
 
 export default function CreateUserProfile(){
-  changePageTitle('Create Profile');
+  ChangePageTitle('Create Profile');
   
   const handleSubmit = (e) => {
     e.preventDefault();
