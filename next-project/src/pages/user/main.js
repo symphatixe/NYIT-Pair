@@ -6,7 +6,7 @@ import Link from 'next/link';
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function Home() {
+export default function UserHome() {
   return (
     <>
       <Head>
@@ -43,13 +43,40 @@ export default function Home() {
           </div>
         </div>
       
-        <div className = {styles.card}>
-          <Link href = "/guest/login">
+        <div className = {styles.grid}>
+          <Link href = "/user/userProfile" className = {styles.card}>
             <h2 className = {inter.className}>
-              Login <span>-&gt;</span>
+              Your Profile <span>-&gt;</span>
             </h2>
             <p className = {inter.className}>
-              Login here!
+              Edit or add details here!
+            </p>
+          </Link>
+
+          <Link href = "/user/userSchedule" className = {styles.card}>
+            <h2 className = {inter.className}>
+              Your Schedule <span>-&gt;</span>
+            </h2>
+            <p className = {inter.className}>
+              Edit schedule or adjust classes here!
+            </p>
+          </Link>
+
+          <Link href = "/user/report" className = {styles.card}>
+            <h2 className = {inter.className}>
+              Report <span>-&gt;</span>
+            </h2>
+            <p className = {inter.className}>
+              Generate a Pair report!
+            </p>
+          </Link>
+
+          <Link href = "/about" className = {styles.card}>
+            <h2 className = {inter.className}>
+              About <span>-&gt;</span>
+            </h2>
+            <p className = {inter.className}>
+              View our team info here!
             </p>
           </Link>
           </div>

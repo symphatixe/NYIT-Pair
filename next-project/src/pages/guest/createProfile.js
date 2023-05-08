@@ -1,11 +1,11 @@
-import { Inter } from 'next/font/google'
 import styles from '@component/styles/Home.module.css'
 import Link from 'next/link';
 import Image from 'next/image';
+import { changePageTitle } from '../../../public/backend';
 
-const inter = Inter({ subsets: ['latin'] })
-
-export default function profile(){
+export default function CreateUserProfile(){
+  changePageTitle('Create Profile');
+  
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -14,7 +14,7 @@ export default function profile(){
 
   return (
     <>
-    <div className={styles.back}><Link href='/'>Back</Link> </div>
+    <div className={styles.back}><Link href='/guest/createUser'>Back</Link> </div>
     
     <main className={styles.profileMain} > 
      <div className ={styles.profilePicture}><Image

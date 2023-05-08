@@ -1,30 +1,48 @@
+import { useEffect } from "react";
+
 let activeUser;
 
+export function changePageTitle(title) {
+
+  useEffect(() => { document.title = title;}, [title]);
+}
+
 export class user {
+
   hashtags = [];
-  constructor(name, pwd, email, year, major, campus) {
+  constructor(userID, name, pwd, email, studentID, year, major, campus, bio) {
+    this.userID = userID;
     this.name = name;
     this.pwd = pwd;
     this.email = email;
+    this.studentID = studentID;
     this.year = year;
     this.major = major;
     this.campus = campus;
+    this.bio = bio;
   }
 
+  get UserID()          {return this.userID;}
+  set UserID(newID)     {this.userID = newID;}
   get Name()            {return this.name;}
   set Name(newName)     {this.name = newName;}
   get Pwd()             {return this.pwd;}
   set Pwd(newPwd)       {this.pwd = newPwd;}
   get Email()           {return this.email;}
   set Email(newEmail)   {this.email = newEmail;}
+  get StudentID()       {return this.studentID;}
+  set StudentID(newID)  {studentID = newID;}
   get Year()            {return this.year;}
   set Year(newYear)     {this.year = newYear;}
   get Major()           {return this.major;}
   set Major(newMajor)   {this.major = newMajor;}
   get Campus()          {return this.campus;}
   set Campus(newCampus) {this.campus = newCampus;}
+  get Bio()             {return this.bio;}
+  set Bio(newBio)       {this.bio = newBio;}
 
-  addHashtag(hashtag)  {this.hashtags.push(hashtag);}
+  //assume that hashtag in this case is a class object
+  addHashtag(hashtag)   {this.hashtags.push(hashtag);}
   removeHashtag(hashtag) {
     if (this.hashtags.indexOf(hashtag) != -1) {
       this.hashtags.splice(indexOf(hashtag), 1);
@@ -39,7 +57,21 @@ export class user {
   }
 }
 
+export class hashtag {
+
+  constructor(text, userID) {
+    this.text = text;
+    this.userID = userID;
+  }
+
+  get Text()            {return this.text;}
+  set Text(newText)     {text = newText;}       
+  get UserID()          {return this.userID;}
+  set UserID(newID)     {userID = newID;}
+}
+
 export class course {
+
   constructor(courseCode, courseName, professor, section, location, startTime, endTime, weekday) {
     this.courseCode = courseCode;
     this.courseName = courseName;
@@ -53,6 +85,8 @@ export class course {
 
   get CourseCode()            {return this.courseCode;}
   set CourseCode(newCode)     {this.courseCode = newCode;}
+  get CourseName()            {return this.courseName;}
+  set CourseName(newName)     {this.courseName = newName;}
   get Professor()             {return this.professor;}
   set Professor(newProf)      {this.professor = newProf;}
   get Section()               {return this.section;}

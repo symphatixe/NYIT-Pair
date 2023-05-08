@@ -1,13 +1,15 @@
 import { Inter } from 'next/font/google'
 import styles from '@component/styles/Home.module.css'
 import Link from 'next/link';
-import Image from 'next/image'
-import { collectClasses, addClassInputs } from '../../public/backend';
+import { collectClasses, addClassInputs } from '../../../public/backend';
+import { changePageTitle } from '../../../public/backend';
 import { useState } from 'react';
 
 const inter = Inter({ subsets: ['latin'] })
 
-export default function schedule(){
+export default function CreateSchedule() {
+  changePageTitle('Create Schedule');
+
     return (
     <>
     <div className={styles.back} ><Link href='/'>Back</Link> </div>
@@ -67,7 +69,7 @@ export default function schedule(){
          */}
 
       {/*Formatted this way so the addClass button can eventually duplicate the code for inputting class 
-      information and have them alligned properly. An example of how it woiuld look is on monday.
+      information and have them alligned properly. An example of how it would look is on monday.
       The old code i left above incase anyone wanted it back. ~ Eddie */}
 
       <div className={styles.classTimes}>
