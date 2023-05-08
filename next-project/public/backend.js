@@ -67,14 +67,6 @@ export class course {
   set Weekday(newDay)         {this.weekday = newDay;}
 }
 
-export function handleSubmit(e) {
-  e.preventDefault();
-  const formData = new FormData(e.target);
-
-  activeUser = new user("", formData.get("password"), formData.get("username"), "", "", "");
-  console.log(activeUser.Email);
-}
-
 export function addClassInputs(day) {
   const classInput = document.createElement("input");
   const startInput = document.createElement("input");
@@ -144,7 +136,7 @@ export function collectClasses() {
   }
 
   for (let i = 0; i < friInputList.length; i++) {
-    tuesClassList.push(new course(tuesInputList[i].value, "", "", "", "", tuesInputList[i + 1].value, tuesInputList[i + 2].value, "Friday"));
+    friClassList.push(new course(tuesInputList[i].value, "", "", "", "", tuesInputList[i + 1].value, tuesInputList[i + 2].value, "Friday"));
     i += 3;
   }
 
