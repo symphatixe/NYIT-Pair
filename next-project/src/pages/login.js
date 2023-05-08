@@ -10,17 +10,21 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function login(){
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    // const [email, setEmail] = useState('');
+    // const [password, setPassword] = useState('');
 
-    const handleChange = (e) => { 
-        const { name, value } = e.target;
-        if (name === 'email') setEmail(value);
-        if (name === 'password') setPassword(value);
-    }
+    // const handleChange = (e) => { 
+    //     const { name, value } = e.target;
+    //     if (name === 'email') setEmail(value);
+    //     if (name === 'password') setPassword(value);
+    // }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+
+        const formData = new FormData(e.target);
+        const email = formData.get("email");
+        const password = formData.get("password");
 
         console.log('hello there is something here', email, password);
 
@@ -71,14 +75,14 @@ export default function login(){
             <label htmlFor = "email">Enter your email: </label>
             </div>
             <div className ={styles.inputs}>
-            <input type = "email" name = "email" id = "email" onChange={handleChange}/>
+            <input type = "email" name = "email" id = "email" />
             </div>
             
             <div className = {styles.inputs}>
             <label htmlFor="password">Enter your password: </label>
             </div>
             <div className = {styles.inputs}>
-            <input type = "password" name = "password" id = "password" onChange={handleChange}/>
+            <input type = "password" name = "password" id = "password" />
             <br /><br />
             </div>
             <div className = {styles.submit}>

@@ -2,7 +2,7 @@ import { Inter } from 'next/font/google'
 import styles from '@component/styles/Home.module.css'
 import Link from 'next/link';
 import Image from 'next/image'
-import { course, addClassInputs } from '../../public/backend';
+import { collectClasses, addClassInputs } from '../../public/backend';
 import { useState } from 'react';
 
 const inter = Inter({ subsets: ['latin'] })
@@ -148,7 +148,7 @@ export default function schedule(){
         <br /><br />
         <div className = {styles.submit}>
           <label htmlFor = "submit"> </label>
-          <input type = "submit" value="Submit" id = "submit" style={{height:40, width:60, color: 'black',}}></input>
+          <input type = "submit" value="Submit" id = "submit" style={{height:40, width:60, color: 'black',}} onClick={collectClasses}></input>
           <br /><br />
         </div>
     </div>

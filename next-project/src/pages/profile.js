@@ -2,11 +2,16 @@ import { Inter } from 'next/font/google'
 import styles from '@component/styles/Home.module.css'
 import Link from 'next/link';
 import Image from 'next/image';
-import { handleSubmit } from '../../public/backend';
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function profile(){
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(e.target);
+  }
+
   return (
     <>
     <div className={styles.back}><Link href='/'>Back</Link> </div>
@@ -20,7 +25,7 @@ export default function profile(){
           priority
           /></div>
           <div className={styles.profileBio}>
-            <form>
+            <form onSubmit={handleSubmit}>
               <label for="name">Enter your name: </label>
               <br /><br />
               <input type="text" name="name" id="name" required/>

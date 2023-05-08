@@ -105,3 +105,56 @@ export function addClassInputs(day) {
   document.getElementById(day + "dayClasses").insertBefore(endInput, addButton);
   addButton.insertAdjacentHTML("beforebegin", "&nbsp; <br /><br />");
 }
+
+export function collectClasses() {
+  const monInputList = document.getElementById("mondayClasses").querySelectorAll("input");
+  const tuesInputList = document.getElementById("tuesdayClasses").querySelectorAll("input");
+  const wedInputList = document.getElementById("wednesdayClasses").querySelectorAll("input");
+  const thursInputList = document.getElementById("thursdayClasses").querySelectorAll("input");
+  const friInputList = document.getElementById("fridayClasses").querySelectorAll("input");
+  const satInputList = document.getElementById("saturdayClasses").querySelectorAll("input");
+  const sunInputList = document.getElementById("sundayClasses").querySelectorAll("input");
+
+  const monClassList = [];
+  const tuesClassList = [];
+  const wedClassList = [];
+  const thursClassList = [];
+  const friClassList = [];
+  const satClassList = [];
+  const sunClassList = []; 
+
+  for (let i = 0; i < monInputList.length; i++) {
+    monClassList.push(new course(monInputList[i].value, "", "", "", "", monInputList[i + 1].value, monInputList[i + 2].value, "Monday"));
+    i += 3;
+  }
+
+  for (let i = 0; i < tuesInputList.length; i++) {
+    tuesClassList.push(new course(tuesInputList[i].value, "", "", "", "", tuesInputList[i + 1].value, tuesInputList[i + 2].value, "Tuesday"));
+    i += 3;
+  }
+
+  for (let i = 0; i < wedInputList.length; i++) {
+    wedClassList.push(new course(wedInputList[i].value, "", "", "", "", wedInputList[i + 1].value, wedInputList[i + 2].value, "Wednesday"));
+    i += 3;
+  }
+
+  for (let i = 0; i < thursInputList.length; i++) {
+    thursClassList.push(new course(thursInputList[i].value, "", "", "", "", thursInputList[i + 1].value, thursInputList[i + 2].value, "Thursday"));
+    i += 3;
+  }
+
+  for (let i = 0; i < friInputList.length; i++) {
+    tuesClassList.push(new course(tuesInputList[i].value, "", "", "", "", tuesInputList[i + 1].value, tuesInputList[i + 2].value, "Friday"));
+    i += 3;
+  }
+
+  for (let i = 0; i < satInputList.length; i++) {
+    satClassList.push(new course(satInputList[i].value, "", "", "", "", satInputList[i + 1].value, satInputList[i + 2].value, "Saturday"));
+    i += 3;
+  }
+
+  for (let i = 0; i < sunInputList.length; i++) {
+    sunClassList.push(new course(sunInputList[i].value, "", "", "", "", sunInputList[i + 1].value, sunInputList[i + 2].value, "Sunday"));
+    i += 3;
+  }
+}
