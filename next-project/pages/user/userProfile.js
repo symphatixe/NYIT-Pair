@@ -12,7 +12,7 @@ export default function UserProfile(){
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const formData = new FormData(e.target);
+    
   }
 
   return (
@@ -28,7 +28,7 @@ export default function UserProfile(){
           priority
           /></div>
           <div className = {styles.profileBio}>
-            <form onSubmit = {handleSubmit}>
+            <form>
               <label for = "name">Enter your name: </label>
               <br /><br />
               <input type = "text" name = "name" id = "name" required/>
@@ -49,7 +49,6 @@ export default function UserProfile(){
               <br /><br />
               <textarea name = "hashtag" id = "hashtag" col = "30" rows = "5" placeHolder = "Hashtags"/>
               <br /> <br />
-              <input type = "submit" value="Submit" />
             </form>
           </div>
     </main>

@@ -6,7 +6,7 @@ import { ChangePageTitle } from '../../server/backend';
 import { ActiveUserContext } from '../../src/ActiveUserContext';
 import { useContext } from 'react';
 
-export default function Login(){
+export default function Login(){ 
     ChangePageTitle('Login Page');
     const router = useRouter();
     const {loggedUser, setLoggedUser} = useContext(ActiveUserContext);

@@ -50,7 +50,7 @@ export default function UserHome() {
         <h2 className = {`${inter.className} ${styles.intro}`}>Welcome to Pair, {loggedUser && loggedUser.name}</h2>
 
       
-        <div className = {styles.grid}>
+        <div className = {styles.gridMain}>
           <Link href = "/user/userProfile" className = {styles.card}>
             <h2 className = {inter.className}>
               Your Profile <span>-&gt;</span>

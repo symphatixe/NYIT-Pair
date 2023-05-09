@@ -14,7 +14,7 @@ export default function CreateUserProfile(){
 
   return (
     <>
-    <div className={styles.back}><Link href='/guest/createUser'>Back</Link> </div>
+    <div className={`${inter.className} ${styles.back}`}><Link href='/guest/createUser'>Back</Link> </div>
     
     <main className={styles.profileMain} > 
      <div className ={styles.profilePicture}><Image

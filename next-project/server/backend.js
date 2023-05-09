@@ -1,8 +1,12 @@
 import { useEffect } from "react";
 
 export function ChangePageTitle(title) {
+  const link = document.createElement('link');
+  link.rel = 'icon';
+  link.href = '/bluepair.png'
 
   useEffect(() => { document.title = title;}, [title]);
+  useEffect(() => { document.head.appendChild(link)} );
 }
 
 export class User {
