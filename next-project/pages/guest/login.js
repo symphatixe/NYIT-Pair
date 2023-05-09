@@ -2,10 +2,9 @@ import styles from '@component/styles/Home.module.css'
 import Link from 'next/link';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
-import { ChangePageTitle } from '../../../public/backend.js';
-import { ActiveUserContext } from '../../../public/ActiveUserContext';
+import { ChangePageTitle } from '../../server/backend';
+import { ActiveUserContext } from '../../src/ActiveUserContext';
 import { useContext } from 'react';
-import { User } from '../../../public/backend'
 
 export default function Login(){
     ChangePageTitle('Login Page');
@@ -36,7 +35,7 @@ export default function Login(){
         }
 
         else {
-            alert('Incorrect email or password was entered, please try again. If you do not have an account please create an account.');
+            alert('Incorrect email or password was entered, please try again. If you do not have an account, please create an account.');
         }
     }
 

@@ -4,7 +4,7 @@ import { Inter } from 'next/font/google'
 import styles from '@component/styles/Home.module.css'
 import Link from 'next/link';
 import { useContext } from 'react';
-import { ActiveUserContext } from '../../../public/ActiveUserContext';
+import { ActiveUserContext } from '../../src/ActiveUserContext';
 
 const inter = Inter({ subsets: ['latin'] })
 

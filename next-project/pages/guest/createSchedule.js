@@ -1,8 +1,8 @@
 import { Inter } from 'next/font/google'
 import styles from '@component/styles/Home.module.css'
 import Link from 'next/link';
-import { collectClasses, addClassInputs } from '../../../public/backend';
-import { ChangePageTitle } from '../../../public/backend';
+import { collectClasses, addClassInputs } from '../../server/backend';
+import { ChangePageTitle } from '../../server/backend';
 
 const inter = Inter({ subsets: ['latin'] })
 

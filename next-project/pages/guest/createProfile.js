@@ -1,7 +1,7 @@
 import styles from '@component/styles/Home.module.css'
 import Link from 'next/link';
 import Image from 'next/image';
-import { ChangePageTitle } from '../../../public/backend';
+import { ChangePageTitle } from '../../server/backend';
 
 export default function CreateUserProfile(){
   ChangePageTitle('Create Profile');

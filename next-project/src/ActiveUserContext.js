@@ -1,5 +1,5 @@
 import { createContext  } from "react";
-import { User } from './backend'
+import { User } from '../server/backend'
 
 const ActiveUserContext = createContext();
 export {ActiveUserContext};

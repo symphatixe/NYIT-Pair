@@ -1,12 +1,22 @@
-import { User } from '../../../../public/backend'
+import { User } from '../../../server/backend'
+const mysql = require('mysql2/promise')
 
 export default async function loginHandler(req, res) {
-    const sqlConnect = require('../dbConnect')
+
+    const connection = await mysql.createConnection({
+        host: 'localhost',
+        database: 'default',
+        port: 3306,
+        user: 'root',
+        password: 'Nerftactics0!'
+    });
+
+
     const {email, password} = req.body;
 
     try {
 
-        const [result] = await sqlConnect.query('SELECT * FROM users WHERE email = ? AND password = ?', [email, password]);
+        const [result] = await connection.query('SELECT * FROM users WHERE email = ? AND password = ?', [email, password]);
 
         if (result.length > 0) {
             const {userID, name, password, email, student_ID, year, major, campus, bio} = result[0];
@@ -22,8 +32,8 @@ export default async function loginHandler(req, res) {
     catch (error) {
         console.log('some error', error)
     }
-    
+
     finally {
-        databaseConnection.end();
+        connection.end();
     }
 }
