@@ -15,123 +15,70 @@ export default function schedule(){
         <div className = {styles.weeklySchedule}>
         <label htmlFor = "week">Monday -- Tuesday -- Wednesday -- Thursday -- Friday -- Saturday -- Sunday </label>
         </div>
-        
-        {/* <label for="class">Class code: </label>
-        <input type="text" name="class" id="class" placeholder="ex. CSCI 318"/>
-        &nbsp;
-        <input type="text" name="class" id="class" placeholder="ex. CSCI 318"/>
-        &nbsp;
-        <input type="text" name="class" id="class" placeholder="ex. CSCI 318"/>
-        &nbsp;
-        <input type="text" name="class" id="class" placeholder="ex. CSCI 318"/>
-        &nbsp;
-        <input type="text" name="class" id="class" placeholder="ex. CSCI 318"/>
-        &nbsp;
-        <input type="text" name="class" id="class" placeholder="ex. CSCI 318"/>
-        &nbsp;
-        <input type="text" name="class" id="class" placeholder="ex. CSCI 318"/>
-        <br /><br />
-        <label for="begin">Start time: </label>
-        
 
-        <input type="text" name="begin" id="begin" placeHolder="Time Start"/>
-        &nbsp;
-        <input type="text" name="begin" id="begin" placeHolder="Time Start"/>
-        &nbsp;
-        <input type="text" name="begin" id="begin" placeHolder="Time Start"/>
-        &nbsp;
-        <input type="text" name="begin" id="begin" placeHolder="Time Start"/>
-        &nbsp;
-        <input type="text" name="begin" id="begin" placeHolder="Time Start"/>
-        &nbsp;
-        <input type="text" name="begin" id="begin" placeHolder="Time Start"/>
-        &nbsp;
-        <input type="text" name="begin" id="begin" placeHolder="Time Start"/>
-        &nbsp;
-        <br /><br />
-        <label for="end">End time: </label>
-        <input type="text" name="end" id="end" placeHolder="Time End"/>
-        &nbsp;
-        <input type="text" name="end" id="end" placeHolder="Time End"/>
-        &nbsp;
-        <input type="text" name="end" id="end" placeHolder="Time End"/>
-        &nbsp;
-        <input type="text" name="end" id="end" placeHolder="Time End"/>
-        &nbsp;
-        <input type="text" name="end" id="end" placeHolder="Time End"/>
-        &nbsp;
-        <input type="text" name="end" id="end" placeHolder="Time End"/>
-        &nbsp;
-        <input type="text" name="end" id="end" placeHolder="Time End"/>
-         */}
-
-      {/*Formatted this way so the addClass button can eventually duplicate the code for inputting class 
-      information and have them alligned properly. An example of how it would look is on monday.
-      The old code i left above incase anyone wanted it back. ~ Eddie */}
-
-      <div className = {styles.classTimes}>
-        <div>Class code:  <br />Start time:  <br />End time: <br /><br /><br /></div>
+      <div className = {styles.classTimes} style = {{paddingRight: 150}}>
+        <div style={{paddingLeft: 80}}>Class code:  <br />Start time:  <br />End time: <br /><br /><br /></div>
       
-        <div id = 'mondayClasses'>
+        <div id = 'mondayClasses' style={{paddingLeft: 40, paddingRight: 40, paddingTop: 0}}>
           <div id = "class"></div>
           &nbsp;<br />
-          <div id = "begin"></div>
+          <div id = "begin" style={{paddingTop: 0}}></div>
           &nbsp;<br />
-          <div id = "end"></div>
+          <div id = "end" style={{paddingTop: 0}}></div>
           &nbsp;<br /><br />
         </div>
 
-        <div id = 'tuesdayClasses'>
+        <div id = 'tuesdayClasses' style={{paddingLeft: 40, paddingRight: 40, paddingTop: 0}}>
           <div id = "class"></div>
           &nbsp;<br />
-          <div id = "begin"></div>
+          <div id = "begin" style={{paddingTop: 0}}></div>
           &nbsp;<br />
-          <div id = "end"></div>
+          <div id = "end" style={{paddingTop: 0}}></div>
           &nbsp;<br /><br />
         </div>
 
-        <div id = 'wednesdayClasses'>
+        <div id = 'wednesdayClasses' style={{paddingLeft: 40, paddingRight: 40, paddingTop: 0}}>
           <div id = "class"></div>
           &nbsp;<br />
-          <div id = "begin"></div>
+          <div id = "begin" style={{paddingTop: 0}}></div>
           &nbsp;<br />
-          <div id = "end"></div>
+          <div id = "end" style={{paddingTop: 0}}></div>
           &nbsp;<br /><br />
         </div>
 
-        <div id = 'thursdayClasses'>
+        <div id = 'thursdayClasses' style={{paddingLeft: 40, paddingRight: 40, paddingTop: 0}}>
           <div id = "class"></div>
           &nbsp;<br />
-          <div id = "begin"></div>
+          <div id = "begin" style={{paddingTop: 0}}></div>
           &nbsp;<br />
-          <div id = "end"></div>
+          <div id = "end" style={{paddingTop: 0}}></div>
           &nbsp;<br /><br />
         </div>
 
-        <div id = 'fridayClasses'>
+        <div id = 'fridayClasses' style={{paddingLeft: 40, paddingRight: 40, paddingTop: 0}}>
           <div id = "class"></div>
           &nbsp;<br />
-          <div id = "begin"></div>
+          <div id = "begin" style={{paddingTop: 0}}></div>
           &nbsp;<br />
-          <div id = "end"></div>
+          <div id = "end" style={{paddingTop: 0}}></div>
           &nbsp;<br /><br />
         </div>
 
-        <div id = 'saturdayClasses'>
+        <div id = 'saturdayClasses' style={{paddingLeft: 40, paddingRight: 40, paddingTop: 0}}>
           <div id = "class"></div>
           &nbsp;<br />
-          <div id = "begin"></div>
+          <div id = "begin" style={{paddingTop: 0}}></div>
           &nbsp;<br />
-          <div id = "end"></div>
+          <div id = "end" style={{paddingTop: 0}}></div>
           &nbsp;<br /><br />
         </div>
 
-        <div id = 'sundayClasses'>
+        <div id = 'sundayClasses' style={{paddingLeft: 40, paddingRight: 40, paddingTop: 0}}>
           <div id = "class"></div>
           &nbsp;<br />
-          <div id = "begin"></div>
+          <div id = "begin" style={{paddingTop: 0}}></div>
           &nbsp;<br />
-          <div id = "end"></div>
+          <div id = "end" style={{paddingTop: 0}}></div>
           &nbsp;<br /><br />
         </div>
 
@@ -139,8 +86,7 @@ export default function schedule(){
         </div>
         <br /><br />
         <div className = {styles.submit}>
-          <label htmlFor = "edit"> </label>
-          <input type = "button" value="Edit" id="edit" style = {{height:40, width:60, color: 'black',}}></input>
+          <Link id = "edit" href = "/user/editSchedule" style = {{height:40, width:60, color: 'black', background: 'gray', padding: 10, borderRadius: 25}}>Edit</Link>
           <br /><br />
         </div>
     </div>
