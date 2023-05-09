@@ -47,8 +47,26 @@
 }
 
 .gridSchedule {
+  font-size: larger;
   display: grid;
-  grid-template-columns: repeat(7, minmax(25%, auto));
+  grid-template-columns: repeat(7, minmax(100%, auto));
+  align-items: left;
+  position: relative;
+  padding-left: 100px;
+  padding-top: 100px;
+  /* width: var(--max-width); */
+  max-width: 100%;
+}
+.gridScheduleTimes {
+  padding-top: 40px;
+  padding-left: 30px;
+  font-size: medium;
+  display: grid;
+  grid-template-rows: repeat(9, minmax(100%, auto));
+  align-items: left;
+  position: relative;
+  
+  
   /* width: var(--max-width); */
   max-width: 100%;
 }
