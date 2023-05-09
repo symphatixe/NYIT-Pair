@@ -69,7 +69,7 @@ export default function UserHome() {
             </p>
           </Link>
 
-          <Link href = "/user/report" className = {styles.card}>
+          <Link href = "/user/reportGeneration" className = {styles.card}>
             <h2 className = {inter.className}>
               Report <span>-&gt;</span>
             </h2>
