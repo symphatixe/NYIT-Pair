@@ -356,3 +356,31 @@
     transform: rotate(0deg);
   }
 }
+
+/* Cool introduction animation text */
+.intro {
+  padding: 64px;
+  background: linear-gradient(to right, hsl(0, 0%, 30%) 0, hsl(0, 0%, 100%) 10%, hsl(0, 0%, 30%) 20%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 10s infinite linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes shine {
+  0% {
+    background-position: 0;
+  }
+  25% {
+    background-position: 200px;
+  }
+  50% {
+    background-position: 400px;
+  }
+  75% {
+    background-position: 600px;
+  }
+  100% {
+    background-position: 800px;
+  }
+}
