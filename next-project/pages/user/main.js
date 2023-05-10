@@ -10,7 +10,7 @@ import { ChangePageTitle } from '../../server/backend';
 const inter = Inter({ subsets: ['latin'] })
 
 export default function UserHome() {
-  ChangePageTitle('Home Page');
+  ChangePageTitle('Home');
   const { loggedUser } = useContext(ActiveUserContext);
 
   return (
@@ -89,7 +89,6 @@ export default function UserHome() {
             </p>
           </Link>
           </div>
-          
       </main>
     </>
   )

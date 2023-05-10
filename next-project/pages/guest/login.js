@@ -7,7 +7,7 @@ import { ActiveUserContext } from '../../src/ActiveUserContext';
 import { useContext } from 'react';
 
 export default function Login(){ 
-    ChangePageTitle('Login Page');
+    ChangePageTitle('Login');
     const router = useRouter();
     const {loggedUser, setLoggedUser} = useContext(ActiveUserContext);
     
@@ -23,10 +23,10 @@ export default function Login(){
         const email = formData.get("email");
         const password = formData.get("password");
 
-        const response = await fetch('http://localhost:3000/api/users/loginData', 
-                                    {method: 'POST',
+        const response = await fetch('http://localhost:3000/api/users/loginData',{
+                                    method: 'POST',
                                     headers: {'Content-Type': 'application/json'},
-                                    body: JSON.stringify({email, password}) 
+                                    body: JSON.stringify({email, password})
                                     });
         if (response.ok) {
             const user = await response.json();
@@ -42,7 +42,7 @@ export default function Login(){
   return (
     <>
     <ActiveUserContext.Provider value = {{ loggedUser, setLoggedUser }}>
-    <title>Login Page</title>
+
      <div className = {styles.back}><p ><Link href = '/'> Back </Link></p></div>
      
      <div className = {styles.form}>
@@ -57,6 +57,7 @@ export default function Login(){
                 />
             </div>
         </div>
+
         <form onSubmit = {handleSubmit}>
 
             <div className = {styles.inputs}>
@@ -67,7 +68,7 @@ export default function Login(){
             </div>
             
             <div className = {styles.inputs}>
-            <label htmlFor="password">Enter your password: </label>
+            <label htmlFor = "password">Enter your password: </label>
             </div>
             <div className = {styles.inputs}>
             <input type = "password" name = "password" id = "password" required/>
@@ -76,14 +77,16 @@ export default function Login(){
 
             <div className = {styles.submit}>
             <label htmlFor = "submit"> </label>
-            <input type = "submit" value="Submit" id = "submit" style = {{height:40, width:60, color: 'black'}}></input>
+            <input type = "submit" value = "Submit" id = "submit" style = {{height:40, width:60, color: 'black'}}></input>
             <br /><br />
             </div>
 
             <Link href = "/guest/createUser">New user? Create your profile here!</Link>
         </form>
+        
      </div>
-     </ActiveUserContext.Provider>
+
+    </ActiveUserContext.Provider>
     </>
 
    )

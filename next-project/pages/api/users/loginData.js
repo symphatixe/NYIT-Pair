@@ -35,16 +35,10 @@ export default async function loginHandler(req, res) {
             res.status(200).json(user);
         } 
 
-        else {
-            res.status(401).json({ message: 'Invalid credentials' });
+        else {res.status(401).json({ message: 'Invalid credentials.' });
         }
     }
 
-    catch (error) {
-        console.log('some error', error);
-    }
-
-    finally {
-        connection.end();
-    }
+    catch (error) { console.log('some error', error); }
+    finally { connection.end(); }
 }

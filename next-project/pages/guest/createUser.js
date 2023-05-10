@@ -1,18 +1,60 @@
 import styles from '@component/styles/Home.module.css'
 import Link from 'next/link';
 import { ChangePageTitle } from '../../server/backend';
+import { useRouter } from 'next/router';
+import { useContext } from 'react';
+import { ActiveUserContext } from '../../src/ActiveUserContext';
 
 export default function CreateUserProfile(){
   ChangePageTitle('Create User');
+  const router = useRouter();
+  const { loggedUser, setLoggedUser } = useContext(ActiveUserContext);
+
+  const handleCreation = () => {
+    router.push('/guest/createProfile');
+  }
   
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const formData = new FormData(e.target);
+    const email = formData.get("email");
+    const password1 = formData.get("password1");
+    const password2 = formData.get("password2");
+
+    if (password1 === password2) {
+      
+      const response = await fetch('http://localhost:3000/api/users/createUserAPI',{
+                                  method: 'POST',
+                                  headers: {'Content-Type': 'application/json'},
+                                  body: JSON.stringify({email, password2})
+                                  });
+      if (response.ok) {
+        alert('User Created!');
+        handleCreation();
+      }
+
+      else if (response !== 'Server error has occured.') {
+        const user = await response.json()
+
+        alert('Please use a different email, there already exists a user with the email', user.Email);
+      }
+
+      else {
+        alert('Server error has occured, please contact admins for support.');
+      };
+    }
+
+    else {
+      alert('Your passwords do not match, please make sure they match.');
+      return;
+    }
   }
 
   return (
     <>
+    <ActiveUserContext.Provider value = {{ loggedUser, setLoggedUser }}>
+
     <div className = {styles.back}><Link href = '/guest/login'>Back</Link> </div>
     
     <main className = {styles.profileMain} > 
@@ -39,6 +81,7 @@ export default function CreateUserProfile(){
           </div>
     </main>
 
+    </ActiveUserContext.Provider>
     </>
   )
 }
