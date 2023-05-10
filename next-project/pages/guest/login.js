@@ -30,6 +30,7 @@ export default function Login(){
                                     });
         if (response.ok) {
             const user = await response.json();
+            
             setLoggedUser(user);
             handleLogin();
         }
@@ -41,8 +42,6 @@ export default function Login(){
 
   return (
     <>
-    <ActiveUserContext.Provider value = {{ loggedUser, setLoggedUser }}>
-
      <div className = {styles.back}><p ><Link href = '/'> Back </Link></p></div>
      
      <div className = {styles.form}>
@@ -85,10 +84,7 @@ export default function Login(){
         </form>
         
      </div>
-
-    </ActiveUserContext.Provider>
     </>
-
    )
 }
 

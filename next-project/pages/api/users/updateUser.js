@@ -1,3 +1,6 @@
+import { User } from '../../../server/backend'
+const mysql2 = require('mysql2/promise')
+
 /*            const [active] = await connection.query('SELECT * FROM users WHERE email = ?', [email]);
 
             if (active.length < 0) {

@@ -1,14 +1,14 @@
 import styles from '@component/styles/Home.module.css'
 import Link from 'next/link';
-import { ChangePageTitle } from '../../server/backend';
+import { ChangePageTitle, User } from '../../server/backend';
 import { useRouter } from 'next/router';
-import { useContext } from 'react';
 import { ActiveUserContext } from '../../src/ActiveUserContext';
+import { useContext } from 'react';
 
 export default function CreateUserProfile(){
   ChangePageTitle('Create User');
   const router = useRouter();
-  const { loggedUser, setLoggedUser } = useContext(ActiveUserContext);
+  const {loggedUser, setLoggedUser } = useContext(ActiveUserContext);
 
   const handleCreation = () => {
     router.push('/guest/createProfile');
@@ -30,14 +30,21 @@ export default function CreateUserProfile(){
                                   body: JSON.stringify({email, password2})
                                   });
       if (response.ok) {
+        const user = await response.json();
+        
+        setLoggedUser(user);
         alert('User Created!');
         handleCreation();
       }
 
-      else if (response !== 'Server error has occured.') {
-        const user = await response.json()
+      else if (response.status === 401) {
+        const user = await response.json();
 
-        alert('Please use a different email, there already exists a user with the email', user.Email);
+        const {email} = user;
+        const duplicate = new User();
+        duplicate.email = email;
+
+        alert('Please use a different email, there already exists a user with the email ' + duplicate.email);
       }
 
       else {
@@ -53,8 +60,6 @@ export default function CreateUserProfile(){
 
   return (
     <>
-    <ActiveUserContext.Provider value = {{ loggedUser, setLoggedUser }}>
-
     <div className = {styles.back}><Link href = '/guest/login'>Back</Link> </div>
     
     <main className = {styles.profileMain} > 
@@ -80,8 +85,6 @@ export default function CreateUserProfile(){
             </form>
           </div>
     </main>
-
-    </ActiveUserContext.Provider>
     </>
   )
 }
