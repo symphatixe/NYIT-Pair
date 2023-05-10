@@ -5,10 +5,12 @@ import styles from '@component/styles/Home.module.css'
 import Link from 'next/link';
 import { useContext } from 'react';
 import { ActiveUserContext } from '../../src/ActiveUserContext';
+import { ChangePageTitle } from '../../server/backend';
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function UserHome() {
+  ChangePageTitle('Home Page');
   const { loggedUser } = useContext(ActiveUserContext);
 
   return (

@@ -1,6 +1,6 @@
 import '@component/styles/globals.css'
-import { ActiveUserContext, dummyUser } from '../src/ActiveUserContext'
 import React, { useState } from 'react';
+import { ActiveUserContext, dummyUser } from '../src/ActiveUserContext'
 
 
 export default function App({ Component, pageProps }) {

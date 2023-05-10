@@ -45,6 +45,14 @@ export class User {
   set Bio(newBio)       {this.bio = newBio;}
   get ActiveUser()      {return this.activeUser;}
   set ActiveUser(newUser) {this.activeUser = newUser;}
+  get Hashtags() {
+
+    let hashtagReturn = '';
+    this.hashtags.forEach(item => {
+      hashtagReturn += item.hashtag + ',';
+    });
+    return hashtagReturn.trim();
+  }
 
   //assume that hashtag in this case is a class object
   addHashtag(hashtag)   {this.hashtags.push(hashtag);}

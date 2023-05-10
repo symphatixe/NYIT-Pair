@@ -19,8 +19,19 @@ export default async function loginHandler(req, res) {
         const [result] = await connection.query('SELECT * FROM users WHERE email = ? AND password = ?', [email, password]);
 
         if (result.length > 0) {
-            const {userID, name, password, email, student_ID, year, major, campus, bio} = result[0];
-            const user = new User(userID, name, password, email, student_ID, year, major, campus, bio);
+            const {user_ID, name, password, email, student_ID, year, major, campus, bio} = result[0];
+            const user = new User(user_ID, name, password, email, student_ID, year, major, campus, bio);
+
+            try{
+                const [hashtags] = await connection.query('SELECT (hashtag) FROM hashtags WHERE user_ID = ?', [user.userID]);
+                const index = 0;
+                hashtags.forEach(item => user.addHashtag(item.hashtag));
+            }
+
+            catch(error) {
+                console.log('some error', error);
+            }
+
             res.status(200).json(user);
         } 
 
@@ -30,7 +41,7 @@ export default async function loginHandler(req, res) {
     }
 
     catch (error) {
-        console.log('some error', error)
+        console.log('some error', error);
     }
 
     finally {
