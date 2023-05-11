@@ -11,6 +11,8 @@ export default function CreateUserProfile(){
   const router = useRouter();
   const { loggedUser } = useContext(ActiveUserContext);
 
+  const activeUser = loggedUser.email;
+
   const handleCreation = () => {
     router.push('/user/main');
   }
@@ -18,19 +20,19 @@ export default function CreateUserProfile(){
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    
-
     const formData = new FormData(e.target);
     const name = formData.get("name");
     const major = formData.get("major");
+    const studentID = formData.get("studentID");
     const year = formData.get("year");
+    const campus = formData.get("campus");
     const bio = formData.get("bio");
     const hashtag = formData.get("hashtag");
 
-    const response = await fetch('http://localhost:3000/api/users/createUserAPI',{
+    const response = await fetch('http://localhost:3000/api/users/updateUser',{
                                 method: 'POST',
                                 headers: {'Content-Type': 'application/json'},
-                                body: JSON.stringify({email, password2})
+                                body: JSON.stringify({activeUser, name, major, studentID, year, campus, bio, hashtag})
                                 });
   }
 
@@ -56,9 +58,17 @@ export default function CreateUserProfile(){
               <br /><br />
               <input type = "text" name = "major" id = "major" required/>
               <br /><br />
-              <label htmlFor = "year">Enter your year: </label>
+              <label htmlFor = "studentID">Enter your student ID: </label>
+              <br /><br />
+              <input type = "text" name = "studentID" id = "studentID" required/>
+              <br /><br />
+              <label htmlFor = "year">Enter your student year (freshman, sophomore, junior, senior, or graduate): </label>
               <br /><br />
               <input type = "text" name = "year" id = "year" required/>
+              <br /><br />
+              <label htmlFor = "campus">Enter your campus: </label>
+              <br /><br />
+              <input type = "text" name = "campus" id = "campus" required/>
               <br /><br />
               <label htmlFor = "bio">Enter your bio here: </label>
               <br /><br />
