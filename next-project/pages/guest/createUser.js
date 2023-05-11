@@ -3,12 +3,16 @@ import Link from 'next/link';
 import { ChangePageTitle, User } from '../../server/backend';
 import { useRouter } from 'next/router';
 import { ActiveUserContext } from '../../src/ActiveUserContext';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 
 export default function CreateUserProfile(){
   ChangePageTitle('Create User');
   const router = useRouter();
   const {loggedUser, setLoggedUser } = useContext(ActiveUserContext);
+
+  useEffect(() => {
+    if (loggedUser && loggedUser.name !== 'admin') alert('User Created! \nWelcome to Pair, ' + (loggedUser.email || ''));
+  }, [loggedUser]);
 
   const handleCreation = () => {
     router.push('/guest/createProfile');
@@ -31,9 +35,7 @@ export default function CreateUserProfile(){
                                   });
       if (response.ok) {
         const user = await response.json();
-        
         setLoggedUser(user);
-        alert('User Created!');
         handleCreation();
       }
 

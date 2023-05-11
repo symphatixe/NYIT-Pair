@@ -3,10 +3,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ChangePageTitle } from '../../server/backend';
 import { useRouter } from 'next/router';
+import { ActiveUserContext } from '../../src/ActiveUserContext'
+import { useContext } from 'react';
 
 export default function CreateUserProfile(){
   ChangePageTitle('Create Profile');
   const router = useRouter();
+  const { loggedUser } = useContext(ActiveUserContext);
 
   const handleCreation = () => {
     router.push('/user/main');
@@ -15,6 +18,8 @@ export default function CreateUserProfile(){
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    
+
     const formData = new FormData(e.target);
     const name = formData.get("name");
     const major = formData.get("major");
@@ -22,7 +27,11 @@ export default function CreateUserProfile(){
     const bio = formData.get("bio");
     const hashtag = formData.get("hashtag");
 
-
+    const response = await fetch('http://localhost:3000/api/users/createUserAPI',{
+                                method: 'POST',
+                                headers: {'Content-Type': 'application/json'},
+                                body: JSON.stringify({email, password2})
+                                });
   }
 
   return (
@@ -53,11 +62,11 @@ export default function CreateUserProfile(){
               <br /><br />
               <label htmlFor = "bio">Enter your bio here: </label>
               <br /><br />
-              <textarea name = "bio" id = "bio" col = "30" rows = "10" placeHolder = "About you..."/>
+              <textarea name = "bio" id = "bio" col = "30" rows = "10" placeholder = "About you..."/>
               <br /> <br />
               <label htmlFor = "hashtag">Enter your hashtags here: </label>
               <br /><br />
-              <textarea name = "hashtag" id = "hashtag" col = "30" rows = "5" placeHolder="Hashtags"/>
+              <textarea name = "hashtag" id = "hashtag" col = "30" rows = "5" placeholder="Hashtags"/>
               <br /> <br />
               <input type = "submit" value = "Submit" />
             </form>
