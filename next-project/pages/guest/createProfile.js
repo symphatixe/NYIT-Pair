@@ -3,13 +3,10 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ChangePageTitle } from '../../server/backend';
 import { useRouter } from 'next/router';
-import { ActiveUserContext } from '../../src/ActiveUserContext';
-import { useContext } from 'react';
 
 export default function CreateUserProfile(){
   ChangePageTitle('Create Profile');
   const router = useRouter();
-  const {loggedUser, setLoggedUser } = useContext(ActiveUserContext);
 
   const handleCreation = () => {
     router.push('/user/main');
@@ -19,7 +16,13 @@ export default function CreateUserProfile(){
     e.preventDefault();
 
     const formData = new FormData(e.target);
-    con
+    const name = formData.get("name");
+    const major = formData.get("major");
+    const year = formData.get("year");
+    const bio = formData.get("bio");
+    const hashtag = formData.get("hashtag");
+
+
   }
 
   return (
@@ -60,7 +63,6 @@ export default function CreateUserProfile(){
             </form>
           </div>
     </main>
-    
     </>
   )
 }

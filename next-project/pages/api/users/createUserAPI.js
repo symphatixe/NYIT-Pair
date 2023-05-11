@@ -22,7 +22,9 @@ export default async function createHandler(req, res) {
             const [create] = await connection.query('INSERT INTO users (email, password) VALUES (?, ?)', [email, password2]);
             const [setActive] = await connection.query('SELECT * FROM users WHERE email = ?', [email]);
 
-            if (setActive > 0) {
+            console.log(setActive);
+
+            if (setActive.length > 0) {
 
                 const {email, password} = setActive[0];
                 const user = new User(email, password);
