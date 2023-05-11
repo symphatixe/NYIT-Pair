@@ -71,6 +71,23 @@
   max-width: 100%;
 }
 
+.aboutTitle {
+  font-size: larger;
+  padding-left: 50px;
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+.aboutName {
+  font-size: larger;
+  padding-left: 50px;
+  padding-top: 30px;
+}
+.aboutDescription {
+  font-size: larger;
+  padding-left: 50px;
+  padding-top: 10px;
+}
+
 .card {
   padding: 1rem 1.2rem;
   border-radius: var(--border-radius);
