@@ -14,6 +14,7 @@ export default function CreateUserProfile(){
   const activeEmail = loggedUser.email;
 
   const handleCreation = () => {
+    alert('Profile created! ' + activeEmail);
     router.push('/guest/createSchedule');
   }
   

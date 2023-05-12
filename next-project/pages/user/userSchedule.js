@@ -1,10 +1,6 @@
-import { Inter } from 'next/font/google'
 import styles from '@component/styles/Home.module.css'
 import Link from 'next/link';
-import { collectClasses, addClassInputs } from '../../server/backend';
-import { useState } from 'react';
 
-const inter = Inter({ subsets: ['latin'] })
 
 export default function schedule(){
     return (

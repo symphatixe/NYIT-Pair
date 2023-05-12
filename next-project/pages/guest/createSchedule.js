@@ -14,69 +14,27 @@ export default function CreateSchedule() {
   const router = useRouter();
   const { loggedUser, setLoggedUser } = useContext(ActiveUserContext);
 
-  console.log(loggedUser);
+  const activeEmail = loggedUser.email;
+
+  const handleCreation = () => {
+    alert('Schedule Created! ' + activeEmail);
+    router.push('/user/main');
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+
+  }
 
     return (
     <>
     <div className={styles.back} ><Link href='/'>Back</Link> </div>
     <div className={styles.schedule}>
         
-        <div className={styles.weeklySchedule}>
-        <label htmlFor="week">Monday -- Tuesday -- Wednesday -- Thursday -- Friday -- Saturday -- Sunday </label>
-        </div>
-        
-        {/* <label for="class">Class code: </label>
-        <input type="text" name="class" id="class" placeholder="ex. CSCI 318"/>
-        &nbsp;
-        <input type="text" name="class" id="class" placeholder="ex. CSCI 318"/>
-        &nbsp;
-        <input type="text" name="class" id="class" placeholder="ex. CSCI 318"/>
-        &nbsp;
-        <input type="text" name="class" id="class" placeholder="ex. CSCI 318"/>
-        &nbsp;
-        <input type="text" name="class" id="class" placeholder="ex. CSCI 318"/>
-        &nbsp;
-        <input type="text" name="class" id="class" placeholder="ex. CSCI 318"/>
-        &nbsp;
-        <input type="text" name="class" id="class" placeholder="ex. CSCI 318"/>
-        <br /><br />
-        <label for="begin">Start time: </label>
-        
-
-        <input type="text" name="begin" id="begin" placeHolder="Time Start"/>
-        &nbsp;
-        <input type="text" name="begin" id="begin" placeHolder="Time Start"/>
-        &nbsp;
-        <input type="text" name="begin" id="begin" placeHolder="Time Start"/>
-        &nbsp;
-        <input type="text" name="begin" id="begin" placeHolder="Time Start"/>
-        &nbsp;
-        <input type="text" name="begin" id="begin" placeHolder="Time Start"/>
-        &nbsp;
-        <input type="text" name="begin" id="begin" placeHolder="Time Start"/>
-        &nbsp;
-        <input type="text" name="begin" id="begin" placeHolder="Time Start"/>
-        &nbsp;
-        <br /><br />
-        <label for="end">End time: </label>
-        <input type="text" name="end" id="end" placeHolder="Time End"/>
-        &nbsp;
-        <input type="text" name="end" id="end" placeHolder="Time End"/>
-        &nbsp;
-        <input type="text" name="end" id="end" placeHolder="Time End"/>
-        &nbsp;
-        <input type="text" name="end" id="end" placeHolder="Time End"/>
-        &nbsp;
-        <input type="text" name="end" id="end" placeHolder="Time End"/>
-        &nbsp;
-        <input type="text" name="end" id="end" placeHolder="Time End"/>
-        &nbsp;
-        <input type="text" name="end" id="end" placeHolder="Time End"/>
-         */}
-
-      {/*Formatted this way so the addClass button can eventually duplicate the code for inputting class 
-      information and have them alligned properly. An example of how it would look is on monday.
-      The old code i left above incase anyone wanted it back. ~ Eddie */}
+      <div className={styles.weeklySchedule}>
+      <label htmlFor="week">Monday -- Tuesday -- Wednesday -- Thursday -- Friday -- Saturday -- Sunday </label>
+      </div>
 
       <div className={styles.classTimes}>
         <div>Class code:  <br />Start time:  <br />End time: <br /><br /><br /></div>
@@ -156,7 +114,7 @@ export default function CreateSchedule() {
         <br /><br />
         <div className = {styles.submit}>
           <label htmlFor = "submit"> </label>
-          <input type = "submit" value="Submit" id = "submit" style={{height:40, width:60, color: 'black',}} onClick={collectClasses}></input>
+          <input type = "submit" value="Submit" id = "submit" style={{height:40, width:60, color: 'black',}} onClick={() => {collectClasses, handleSubmit}}></input>
           <br /><br />
         </div>
     </div>

@@ -49,14 +49,18 @@
 .gridSchedule {
   font-size: larger;
   display: grid;
-  grid-template-columns: repeat(7, minmax(100%, auto));
-  align-items: left;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 100px;
   position: relative;
   padding-left: 100px;
   padding-top: 100px;
-  /* width: var(--max-width); */
   max-width: 100%;
 }
+
+.day {
+  padding-bottom: 20px;
+}
+
 .gridScheduleTimes {
   padding-top: 40px;
   padding-left: 30px;
@@ -65,9 +69,6 @@
   grid-template-rows: repeat(9, minmax(100%, auto));
   align-items: left;
   position: relative;
-  
-  
-  /* width: var(--max-width); */
   max-width: 100%;
 }
 
@@ -112,6 +113,27 @@
   font-size: 0.9rem;
   line-height: 1.5;
   max-width: 50ch;
+}
+
+.cardClass {
+  padding: 1rem 1.2rem;
+  border-radius: var(--border-radius);
+  background: rgba(var(--card-rgb), 0);
+  border: 1px solid rgba(var(--card-border-rgb), 0);
+  transition: background 200ms, border 200ms;
+  display: inline-block;
+  transition: transform 200ms;
+  font-size: smaller;
+}
+
+.cardClass h2 {
+  font-weight: 600;
+  margin-bottom: 0.7rem;
+}
+
+.cardClass p {
+  font-weight: 600;
+  margin-bottom: 0.7rem;
 }
 
 .center {
@@ -280,6 +302,11 @@
     border: 1px solid rgba(var(--card-border-rgb), 0.15);
   }
 
+  .cardClass:hover {
+    background: rgba(var(--card-rgb), 0.1);
+    border: 1px solid rgba(var(--card-border-rgb), 0.15);
+  }
+
   .card:hover span {
     transform: translateX(4px);
   }
@@ -292,6 +319,11 @@
 
   .card:hover span {
     transform: none;
+  }
+
+  .cardClass:hover {
+    background: rgba(var(--card-rgb), 0.1);
+    border: 1px solid rgba(var(--card-border-rgb), 0.15);
   }
 }
 
