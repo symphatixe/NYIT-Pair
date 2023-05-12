@@ -6,12 +6,11 @@ import { ChangePageTitle } from '../../server/backend';
 const inter = Inter({ subsets: ['latin'] })
 
 export default function ReportGeneration(){
-    ChangePageTitle('Pair Generation');
+    //ChangePageTitle('Pair Generation');
     return (
         <>
         <div className = {styles.back}><Link href = '/user/main'>Back</Link> </div>
         <div className = {styles.gridSchedule}>
-        <label htmlFor = "week">
             <span className = {styles.day}>Monday</span>
             <span className = {styles.day}>Tuesday</span>
             <span className = {styles.day}>Wednesday</span>
@@ -19,7 +18,14 @@ export default function ReportGeneration(){
             <span className = {styles.day}>Friday</span>
             <span className = {styles.day}>Saturday</span>
             <span className = {styles.day}>Sunday</span>
-        </label>
+            
+            <span className = {styles.day}>Monday</span>
+            <span className = {styles.day}>Tuesday</span>
+            <span className = {styles.day}>Wednesday</span>
+            <span className = {styles.day}>Thursday</span>
+            <span className = {styles.day}>Friday</span>
+            <span className = {styles.day}>Saturday</span>
+            <span className = {styles.day}>Sunday</span>
         </div>
         <div className = {styles.gridScheduleTimes}>
         <label htmlFor = "time">8AM   
