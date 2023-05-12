@@ -47,14 +47,13 @@
 }
 
 .gridSchedule {
-  font-size: larger;
   display: grid;
   grid-template-columns: repeat(7, 1fr);
-  grid-gap: 100px;
+  grid-gap: 10px;
   position: relative;
   padding-left: 100px;
   padding-top: 100px;
-  max-width: 100%;
+  max-width: 50%;
 }
 
 .day {
@@ -116,7 +115,7 @@
 }
 
 .cardClass {
-  padding: 1rem 1.2rem;
+  padding: 1rem;
   border-radius: var(--border-radius);
   background: rgba(var(--card-rgb), 0);
   border: 1px solid rgba(var(--card-border-rgb), 0);
