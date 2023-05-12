@@ -3,11 +3,18 @@ import styles from '@component/styles/Home.module.css'
 import Link from 'next/link';
 import { collectClasses, addClassInputs } from '../../server/backend';
 import { ChangePageTitle } from '../../server/backend';
+import { ActiveUserContext } from '../../src/ActiveUserContext';
+import { useContext } from 'react';
+import { useRouter } from 'next/router';
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function CreateSchedule() {
   ChangePageTitle('Create Schedule');
+  const router = useRouter();
+  const { loggedUser, setLoggedUser } = useContext(ActiveUserContext);
+
+  console.log(loggedUser);
 
     return (
     <>

@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import { ActiveUserContext } from '../../src/ActiveUserContext';
 import { useContext, useEffect } from 'react';
 
-export default function CreateUserProfile(){
+export default function CreateUser() {
   ChangePageTitle('Create User');
   const router = useRouter();
   const {loggedUser, setLoggedUser } = useContext(ActiveUserContext);

@@ -9,12 +9,12 @@ import { useContext } from 'react';
 export default function CreateUserProfile(){
   ChangePageTitle('Create Profile');
   const router = useRouter();
-  const { loggedUser } = useContext(ActiveUserContext);
+  const { loggedUser, setLoggedUser } = useContext(ActiveUserContext);
 
-  const activeUser = loggedUser.email;
+  const activeEmail = loggedUser.email;
 
   const handleCreation = () => {
-    router.push('/user/main');
+    router.push('/guest/createSchedule');
   }
   
   const handleSubmit = async (e) => {
@@ -27,13 +27,24 @@ export default function CreateUserProfile(){
     const year = formData.get("year");
     const campus = formData.get("campus");
     const bio = formData.get("bio");
-    const hashtag = formData.get("hashtag");
+    const hashtagData = formData.get("hashtag");
+    const parsedHashtag = hashtagData.split(',');
 
     const response = await fetch('http://localhost:3000/api/users/updateUser',{
                                 method: 'POST',
                                 headers: {'Content-Type': 'application/json'},
-                                body: JSON.stringify({activeUser, name, major, studentID, year, campus, bio, hashtag})
+                                body: JSON.stringify({activeEmail, name, major, studentID, year, campus, bio, parsedHashtag})
                                 });
+
+    if (response.ok) {
+      const user = await response.json();
+      setLoggedUser(user);
+      handleCreation();
+    }
+
+    else {
+      alert('Server error has occured, please contact admins for support');
+    }
   }
 
   return (

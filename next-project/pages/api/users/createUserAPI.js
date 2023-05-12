@@ -19,7 +19,7 @@ export default async function createHandler(req, res) {
         
         if (check.length === 0) {
 
-            const [create] = await connection.query('INSERT INTO users (email, password) VALUES (?, ?)', [email, password2]);
+            await connection.query('INSERT INTO users (email, password) VALUES (?, ?)', [email, password2]);
             const [setActive] = await connection.query('SELECT * FROM users WHERE email = ?', [email]);
 
             if (setActive.length > 0) {
@@ -32,7 +32,7 @@ export default async function createHandler(req, res) {
                 res.status(200).json(user);
             }
 
-            else {res.status(400).json( {message: 'Fetching user from server failed.'});}
+            else {res.status(400).json( {message: 'Fetching user from server failed.'}); }
         }
 
         else if (check.length > 0) {
