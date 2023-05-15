@@ -10,37 +10,803 @@ export default function ReportGeneration(){
     return (
         <>
         <div className = {styles.back}><Link href = '/user/main'>Back</Link> </div>
-        <div className = {styles.gridSchedule}>
-            <span className = {styles.day}>Monday</span>
-            <span className = {styles.day}>Tuesday</span>
-            <span className = {styles.day}>Wednesday</span>
-            <span className = {styles.day}>Thursday</span>
-            <span className = {styles.day}>Friday</span>
-            <span className = {styles.day}>Saturday</span>
-            <span className = {styles.day}>Sunday</span>
-            
-            <span className = {styles.day}>Monday</span>
-            <span className = {styles.day}>Tuesday</span>
-            <span className = {styles.day}>Wednesday</span>
-            <span className = {styles.day}>Thursday</span>
-            <span className = {styles.day}>Friday</span>
-            <span className = {styles.day}>Saturday</span>
-            <span className = {styles.day}>Sunday</span>
-        </div>
-        <div className = {styles.gridScheduleTimes}>
-        <label htmlFor = "time">8AM   
-        <br/><br/>10AM          
-            <div className = {styles.cardClass}>   
-            <h2 className = {inter.className}>test</h2>
-            <p className = {inter.className}>Edit or add details here!</p>
+        <div style = {{display: 'flex'}}>
+            <div className = {styles.gridScheduleL}>
+                <span className = {styles.day}>Monday</span>
+                <span className = {styles.day}>Tuesday</span>
+                <span className = {styles.day}>Wednesday</span>
+                <span className = {styles.day}>Thursday</span>
+                <span className = {styles.day}>Friday</span>
+                <span className = {styles.day}>Saturday</span>
             </div>
-        <br/><br/>12PM 
-        <br/><br/>2PM 
-        <br/><br/>4PM 
-        <br/><br/>6PM 
-        <br/><br/>8PM 
-        <br/><br/>10PM
-        <br/><br/> 12AM</label>
+            <div className = {styles.gridScheduleR}>
+            <span className = {styles.day}>Monday</span>
+                <span className = {styles.day}>Tuesday</span>
+                <span className = {styles.day}>Wednesday</span>
+                <span className = {styles.day}>Thursday</span>
+                <span className = {styles.day}>Friday</span>
+                <span className = {styles.day}>Saturday</span>
+            </div>
+        </div>
+        <div style = {{display: 'flex', flex: 1, flexDirection: 'row', alignItems: 'flex-start'}}>
+        <label htmlFor = "timeL">
+        8AM
+            <div className = {`${inter.className} ${styles.cardClass}`}>   
+            <h2>CSCI 318</h2>
+            <p>Prof. Wenjia Li</p>
+            <p>16 W. 722</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>   
+            <h2>CSCI 318</h2>
+            <p>Prof. Wenjia Li</p>
+            <p>16 W. 722</p>
+            </div>
+            
+            <div className = {`${inter.className} ${styles.cardClass}`}>   
+            <h2>CSCI 318</h2>
+            <p>Prof. Wenjia Li</p>
+            <p>16 W. 722</p>
+            </div>
+            
+            <div className = {`${inter.className} ${styles.cardClass}`}>   
+            <h2>CSCI 318</h2>
+            <p>Prof. Wenjia Li</p>
+            <p>16 W. 722</p>
+            </div>
+            
+            <div className = {`${inter.className} ${styles.cardClass}`}>   
+            <h2>CSCI 318</h2>
+            <p>Prof. Wenjia Li</p>
+            <p>16 W. 722</p>
+            </div>
+            
+            <div className = {`${inter.className} ${styles.cardClass}`}>   
+            <h2>CSCI 318</h2>
+            <p>Prof. Wenjia Li</p>
+            <p>16 W. 722</p>
+            </div>
+            
+            <div className = {`${inter.className} ${styles.cardClass}`}>   
+            <h2>CSCI 318</h2>
+            <p>Prof. Wenjia Li</p>
+            <p>16 W. 722</p>
+            </div>
+        <br/><br/>
+        10AM          
+            <div className = {`${inter.className} ${styles.cardClass}`}>   
+            <h2>CSCI 318</h2>
+            <p>Prof. Wenjia Li</p>
+            <p>16 W. 722</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+        <br/><br/>
+        12PM 
+            <div className = {`${inter.className} ${styles.cardClass}`}>   
+            <h2>CSCI 318</h2>
+            <p>Prof. Wenjia Li</p>
+            <p>16 W. 722</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+        <br/><br/>
+        2PM 
+            <div className = {`${inter.className} ${styles.cardClass}`}>   
+            <h2>CSCI 318</h2>
+            <p>Prof. Wenjia Li</p>
+            <p>16 W. 722</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+        <br/><br/>
+        4PM 
+            <div className = {`${inter.className} ${styles.cardClass}`}>   
+            <h2>CSCI 318</h2>
+            <p>Prof. Wenjia Li</p>
+            <p>16 W. 722</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+        <br/><br/>
+        6PM 
+            <div className = {`${inter.className} ${styles.cardClass}`}>   
+            <h2>CSCI 318</h2>
+            <p>Prof. Wenjia Li</p>
+            <p>16 W. 722</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+        <br/><br/>
+        8PM 
+            <div className = {`${inter.className} ${styles.cardClass}`}>   
+            <h2>CSCI 318</h2>
+            <p>Prof. Wenjia Li</p>
+            <p>16 W. 722</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+        <br/><br/>
+        10PM
+            <div className = {`${inter.className} ${styles.cardClass}`}>   
+            <h2>CSCI 318</h2>
+            <p>Prof. Wenjia Li</p>
+            <p>16 W. 722</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+        <br/><br/> 
+        12AM
+            <div className = {`${inter.className} ${styles.cardClass}`}>   
+            <h2>CSCI 318</h2>
+            <p>Prof. Wenjia Li</p>
+            <p>16 W. 722</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+        </label>
+        </div>
+        <div style = {{display: 'flex', flex: 1, flexDirection: 'row', alignItems: 'flex-start'}}>
+        <label htmlFor = "timeR">
+        8AM
+            <div className = {`${inter.className} ${styles.cardClass}`}>   
+            <h2>CSCI 318</h2>
+            <p>Prof. Wenjia Li</p>
+            <p>16 W. 722</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>   
+            <h2>CSCI 318</h2>
+            <p>Prof. Wenjia Li</p>
+            <p>16 W. 722</p>
+            </div>
+            
+            <div className = {`${inter.className} ${styles.cardClass}`}>   
+            <h2>CSCI 318</h2>
+            <p>Prof. Wenjia Li</p>
+            <p>16 W. 722</p>
+            </div>
+            
+            <div className = {`${inter.className} ${styles.cardClass}`}>   
+            <h2>CSCI 318</h2>
+            <p>Prof. Wenjia Li</p>
+            <p>16 W. 722</p>
+            </div>
+            
+            <div className = {`${inter.className} ${styles.cardClass}`}>   
+            <h2>CSCI 318</h2>
+            <p>Prof. Wenjia Li</p>
+            <p>16 W. 722</p>
+            </div>
+            
+            <div className = {`${inter.className} ${styles.cardClass}`}>   
+            <h2>CSCI 318</h2>
+            <p>Prof. Wenjia Li</p>
+            <p>16 W. 722</p>
+            </div>
+            
+            <div className = {`${inter.className} ${styles.cardClass}`}>   
+            <h2>CSCI 318</h2>
+            <p>Prof. Wenjia Li</p>
+            <p>16 W. 722</p>
+            </div>
+        <br/><br/>
+        10AM          
+            <div className = {`${inter.className} ${styles.cardClass}`}>   
+            <h2>CSCI 318</h2>
+            <p>Prof. Wenjia Li</p>
+            <p>16 W. 722</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+        <br/><br/>
+        12PM 
+            <div className = {`${inter.className} ${styles.cardClass}`}>   
+            <h2>CSCI 318</h2>
+            <p>Prof. Wenjia Li</p>
+            <p>16 W. 722</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+        <br/><br/>
+        2PM 
+            <div className = {`${inter.className} ${styles.cardClass}`}>   
+            <h2>CSCI 318</h2>
+            <p>Prof. Wenjia Li</p>
+            <p>16 W. 722</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+        <br/><br/>
+        4PM 
+            <div className = {`${inter.className} ${styles.cardClass}`}>   
+            <h2>CSCI 318</h2>
+            <p>Prof. Wenjia Li</p>
+            <p>16 W. 722</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+        <br/><br/>
+        6PM 
+            <div className = {`${inter.className} ${styles.cardClass}`}>   
+            <h2>CSCI 318</h2>
+            <p>Prof. Wenjia Li</p>
+            <p>16 W. 722</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+        <br/><br/>
+        8PM 
+            <div className = {`${inter.className} ${styles.cardClass}`}>   
+            <h2>CSCI 318</h2>
+            <p>Prof. Wenjia Li</p>
+            <p>16 W. 722</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+        <br/><br/>
+        10PM
+            <div className = {`${inter.className} ${styles.cardClass}`}>   
+            <h2>CSCI 318</h2>
+            <p>Prof. Wenjia Li</p>
+            <p>16 W. 722</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+        <br/><br/> 
+        12AM
+            <div className = {`${inter.className} ${styles.cardClass}`}>   
+            <h2>CSCI 318</h2>
+            <p>Prof. Wenjia Li</p>
+            <p>16 W. 722</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+ 
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+
+            <div className = {`${inter.className} ${styles.cardClass}`}>
+            <h2>test</h2>
+            <p>test</p>
+            <p>test</p>
+            </div>
+        </label>
         </div>
         </>
     )

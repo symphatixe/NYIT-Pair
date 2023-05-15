@@ -42,18 +42,33 @@
 .gridMain {
   display: grid;
   grid-template-columns: repeat(4, minmax(25%, auto));
-  /* width: var(--max-width); */
   max-width: 100%;
 }
 
-.gridSchedule {
+.gridScheduleL {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(7, minmax(0, 1fr));
   grid-gap: 10px;
   position: relative;
   padding-left: 100px;
   padding-top: 100px;
-  max-width: 50%;
+  max-width: 40%;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.gridScheduleR {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  grid-gap: 10px;
+  position: relative;
+  padding-left: 100px;
+  padding-top: 100px;
+  max-width: 40%;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .day {
@@ -123,16 +138,19 @@
   display: inline-block;
   transition: transform 200ms;
   font-size: smaller;
+  margin-right: 3px;
 }
 
 .cardClass h2 {
   font-weight: 600;
   margin-bottom: 0.7rem;
+  font-size: small;
 }
 
 .cardClass p {
   font-weight: 600;
   margin-bottom: 0.7rem;
+  font-size: smaller;
 }
 
 .center {
